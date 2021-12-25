@@ -1,4 +1,5 @@
 const connection = require("../config/connection");
+const seedComments = require("./comment-seeds");
 const seedFoodType = require("./foodType-seeds");
 const seedPosts = require("./post-seeds");
 const seedUsers = require("./user-seeds");
@@ -11,10 +12,13 @@ const seedAll = async () => {
   console.log("\n----- USERS SEEDED -----\n");
 
   await seedFoodType();
-  console.log("\n----- FoodType SEEDED -----\n");
+  console.log("\n----- FOOD TYPE SEEDED -----\n");
 
   await seedPosts();
   console.log("\n----- POSTS SEEDED -----\n");
+
+  await seedComments();
+  console.log("\n----- COMMENTS SEEDED -----\n");
 
   //   await seedProducts();
   //   console.log("\n----- PRODUCTS SEEDED -----\n");
