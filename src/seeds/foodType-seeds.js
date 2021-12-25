@@ -11,6 +11,7 @@ const foodTypeData = [
     food_type: "Desert",
   },
 ];
+
 const seedFoodType = () => FoodType.bulkCreate(foodTypeData);
 
 module.exports = seedFoodType;

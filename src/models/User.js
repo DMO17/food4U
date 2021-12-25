@@ -38,10 +38,10 @@ const schema = {
   },
   phone_num: {
     type: DataTypes.INTEGER,
+    defaultValue: 10,
     allowNull: false,
     validate: {
       isNumeric: true,
-      len: [11],
     },
   },
   city: {

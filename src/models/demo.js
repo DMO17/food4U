@@ -1,34 +1,34 @@
-const User = require("./User");
-const FoodType = require("./FoodType");
-const Post = require("./Post");
-// const Activity = require("./Activity");
-// const Comment = require("./Comment");
-// const Message = require("./Message");
+// const User = require("./User");
+// const FoodType = require("./FoodType");
+// const Post = require("./Post");
+// // const Activity = require("./Activity");
+// // const Comment = require("./Comment");
+// // const Message = require("./Message");
 
-// ----RELATIONSHIP ON POST TABLE----
+// // ----RELATIONSHIP ON POST TABLE----
 
-//User and Post
-User.hasMany(Post, { foreignKey: "user_id" });
-Post.belongsTo(User, { foreignKey: "user_id" });
+// //User and Post
+// User.hasMany(Post, { foreignKey: "user_id" });
+// Post.belongsTo(User, { foreignKey: "user_id" });
 
-// Post and FoodType
-FoodType.hasMany(Post, { foreignKey: "food_type_id" });
-Post.belongsTo(FoodType, { foreignKey: "food_type_id" });
+// // Post and FoodType
+// FoodType.hasMany(Post, { foreignKey: "food_type_id" });
+// Post.belongsTo(FoodType, { foreignKey: "food_type_id" });
 
-// Many to many relation through POST table
-User.belongsToMany(FoodType, {
-  through: {
-    model: Post,
-    unique: false,
-  },
-});
+// // Many to many relation through POST table
+// User.belongsToMany(FoodType, {
+//   through: {
+//     model: Post,
+//     unique: false,
+//   },
+// });
 
-FoodType.belongsToMany(User, {
-  through: {
-    model: Post,
-    unique: false,
-  },
-});
+// FoodType.belongsToMany(User, {
+//   through: {
+//     model: Post,
+//     unique: false,
+//   },
+// });
 
 // // ----RELATIONSHIP ON COMMENT TABLE----
 
@@ -105,7 +105,5 @@ FoodType.belongsToMany(User, {
 //   },
 // });
 
-///////////
-// module.exports = { Activity, Comment, FoodType, Message, Post, User };
-
-module.exports = { User, FoodType, Post };
+// ///////////
+// // module.exports = { Activity, Comment, FoodType, Message, Post, User };

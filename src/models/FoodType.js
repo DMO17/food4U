@@ -19,7 +19,7 @@ const options = {
   timestamps: true,
   freezeTableName: true,
   underScored: true,
-  moduleName: "food_type",
+  moduleName: "foodType",
 };
 
 class FoodType extends Model {}
