@@ -47,7 +47,6 @@ const schema = {
   city: {
     type: DataTypes.STRING,
     allowNull: false,
-    unique: true,
   },
   address: {
     type: DataTypes.STRING,
@@ -56,13 +55,13 @@ const schema = {
   },
   profile_url: {
     type: DataTypes.STRING,
+    defaultValue:
+      "https://www.pngitem.com/pimgs/m/150-1503945_transparent-user-png-default-user-image-png-png.png",
     allowNull: false,
-    unique: true,
   },
   description: {
     type: DataTypes.STRING,
     allowNull: false,
-    unique: true,
   },
 };
 

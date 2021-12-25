@@ -1,12 +1,19 @@
-const { Model, DataTypes } = require("sequelize");
+const { Model, DataTypes, UUIDV4 } = require("sequelize");
+
 const connection = require("../config/connection");
 
 const schema = {
   id: {
     type: DataTypes.INTEGER,
     allowNull: false,
-    primaryKey: true,
+    // primaryKey: true,
     autoIncrement: true,
+  },
+  uuid: {
+    type: Sequelize.UUID,
+    defaultValue: UUIDV4,
+    allowNull: false,
+    primaryKey: true,
   },
   food_name: {
     type: DataTypes.STRING,

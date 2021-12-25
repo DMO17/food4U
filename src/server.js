@@ -1,4 +1,4 @@
-// npm packages import
+// npm packages imports
 const express = require("express");
 
 // global imports

@@ -24,7 +24,7 @@ const schema = {
     type: DataTypes.INTEGER,
     references: {
       model: "post",
-      key: "id",
+      key: "uuid",
     },
     onDelete: "cascade",
   },
