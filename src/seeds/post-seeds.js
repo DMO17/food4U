@@ -9,6 +9,8 @@ const postData = [
     price: 2.0,
     user_id: 1,
     food_type_id: 2,
+    item: "Single",
+    status: "Available",
   },
   {
     food_name: "White Bread",
@@ -18,6 +20,8 @@ const postData = [
     price: 1.55,
     user_id: 1,
     food_type_id: 2,
+    item: "Bundle",
+    status: "Closed",
   },
   {
     food_name: "Brown Bread",
@@ -27,6 +31,8 @@ const postData = [
     price: 1.75,
     user_id: 2,
     food_type_id: 2,
+    item: "Single",
+    status: "Available",
   },
   {
     food_name: "ice-cream",
@@ -36,6 +42,8 @@ const postData = [
     price: 3.0,
     user_id: 2,
     food_type_id: 3,
+    item: "Single",
+    status: "Reserved",
   },
 ];
 

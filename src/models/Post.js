@@ -1,4 +1,4 @@
-const { Model, DataTypes, UUIDV4, UUID } = require("sequelize");
+const { Model, DataTypes, UUIDV4, UUID, ENUM } = require("sequelize");
 
 const connection = require("../config/connection");
 
@@ -52,7 +52,14 @@ const schema = {
     },
     onDelete: "cascade",
   },
-  //status enum
+  item: {
+    type: ENUM,
+    values: ["Single", "Bundle"],
+  },
+  status: {
+    type: ENUM,
+    values: ["Available", "Closed", "Reserved"],
+  },
 };
 
 const options = {
