@@ -35,11 +35,11 @@ const options = {
   timestamps: true,
   freezeTableName: true,
   underScored: true,
-  moduleName: "message",
+  moduleName: "order",
 };
 
-class Message extends Model {}
+class Order extends Model {}
 
-Message.init(schema, options);
+Order.init(schema, options);
 
-module.exports = Message;
+module.exports = Order;

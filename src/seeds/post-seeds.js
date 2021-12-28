@@ -11,8 +11,8 @@ const postData = [
     food_type_id: 2,
   },
   {
-    food_name: "Bread",
-    description: "This is a brown bread that expires in 3 days",
+    food_name: "White Bread",
+    description: "This is a white bread that expires in 3 days",
     food_url:
       "https://cdn.shopify.com/s/files/1/0348/7465/4764/products/KingsmillWholemealMediumBread_520x.png?v=1584487528",
     price: 1.55,
