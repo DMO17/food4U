@@ -1,0 +1,5 @@
+User Journey 
+
+1. A user can create an account by signup
+2. A user can login
+3. 
