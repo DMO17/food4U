@@ -4,11 +4,14 @@ const express = require("express");
 // global imports
 const connection = require("./config/connection");
 
+const routes = require("./routes");
+
 // setting up server
 
 const PORT = 4000;
 
 const app = express();
+app.use(routes);
 
 const init = async () => {
   try {

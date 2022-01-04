@@ -17,8 +17,7 @@ post routes:
 /profile
 /profile/:id
 
-/wishList
+/watch-list
 
 /inbox
 
-/signOut
