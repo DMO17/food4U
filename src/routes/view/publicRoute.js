@@ -9,6 +9,6 @@ const router = Router();
 
 router.use("/home", renderHomePage);
 router.use("/login", renderLoginPage);
-router.use("/signup", renderSignUpPage);
+router.use("/sign-up", renderSignUpPage);
 
 module.exports = router;

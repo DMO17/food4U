@@ -1,6 +1,7 @@
 // npm packages imports
 const express = require("express");
-
+const expressHandlebars = require("express-handlebars");
+const path = require("path");
 // global imports
 const connection = require("./config/connection");
 
@@ -11,8 +12,14 @@ const routes = require("./routes");
 const PORT = 4000;
 
 const app = express();
-app.use(routes);
 
+const hbs = expressHandlebars.create({});
+
+app.engine("handlebars", hbs.engine);
+app.set("view engine", "handlebars");
+
+app.use(express.static(path.join(__dirname, "../public")));
+app.use(routes);
 const init = async () => {
   try {
     await connection.sync({ force: false });

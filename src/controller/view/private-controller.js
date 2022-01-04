@@ -2,19 +2,19 @@ const renderDashboard = (req, res) => {
   res.render("dashboard");
 };
 const renderPostById = (req, res) => {
-  res.render("postById");
+  res.render("food-post");
 };
 const renderPostForm = (req, res) => {
-  res.render("postForm");
+  res.render("create-food-post");
 };
 const renderOrderForm = (req, res) => {
-  res.render("orderForm");
+  res.render("order-form");
 };
 const renderProfilePage = (req, res) => {
   res.render("profile-page");
 };
 const renderWatchList = (req, res) => {
-  res.render("watchList");
+  res.render("watch-list");
 };
 const renderInbox = (req, res) => {
   res.render("inbox");
