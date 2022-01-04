@@ -51,7 +51,7 @@ const schema = {
   address: {
     type: DataTypes.STRING,
     allowNull: false,
-    unique: true,
+    unique: false,
   },
   profile_url: {
     type: DataTypes.STRING,
@@ -61,7 +61,7 @@ const schema = {
   },
   description: {
     type: DataTypes.STRING,
-    allowNull: false,
+    allowNull: true,
   },
 };
 
