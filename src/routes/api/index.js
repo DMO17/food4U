@@ -1,5 +1,10 @@
 const { Router } = require("express");
 const {
+  commentFoodPost,
+  updateCommentFoodPostById,
+  deleteCommentFoodPostById,
+} = require("../../controller/api/comment");
+const {
   createFoodPost,
   updateFoodPostById,
   deleteFoodPostById,
