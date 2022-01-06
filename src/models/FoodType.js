@@ -12,10 +12,6 @@ const schema = {
     type: DataTypes.STRING,
     allowNull: false,
   },
-  food_type: {
-    type: DataTypes.STRING,
-    allowNull: false,
-  },
 };
 
 const options = {

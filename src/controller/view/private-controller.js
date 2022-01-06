@@ -1,10 +1,10 @@
 const renderDashboard = (req, res) => {
   res.render("dashboard");
 };
-const renderPostById = (req, res) => {
+const renderFoodPostById = (req, res) => {
   res.render("food-post");
 };
-const renderPostForm = (req, res) => {
+const renderFoodPostForm = (req, res) => {
   res.render("create-food-post");
 };
 const renderOrderForm = (req, res) => {
@@ -22,8 +22,8 @@ const renderInbox = (req, res) => {
 
 module.exports = {
   renderDashboard,
-  renderPostById,
-  renderPostForm,
+  renderFoodPostById,
+  renderFoodPostForm,
   renderOrderForm,
   renderProfilePage,
   renderWatchList,

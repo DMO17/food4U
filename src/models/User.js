@@ -48,7 +48,7 @@ const schema = {
     type: DataTypes.STRING,
     allowNull: false,
   },
-  address: {
+  location: {
     type: DataTypes.STRING,
     allowNull: false,
     unique: false,

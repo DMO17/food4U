@@ -36,6 +36,11 @@ const schema = {
       isDecimal: true,
     },
   },
+  location: {
+    type: DataTypes.STRING,
+    defaultValue: "298 Brookvale Rd, Birmingham B23 7RT",
+    allowNull: false,
+  },
   user_id: {
     type: DataTypes.INTEGER,
     references: {
