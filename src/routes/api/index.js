@@ -1,4 +1,9 @@
 const { Router } = require("express");
+const {
+  createFoodPost,
+  updateFoodPostById,
+  deleteFoodPostById,
+} = require("../../controller/api/food-post");
 
 const router = Router();
 
