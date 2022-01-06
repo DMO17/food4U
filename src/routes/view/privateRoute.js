@@ -1,8 +1,8 @@
 const { Router } = require("express");
 const {
   renderDashboard,
-  renderPostById,
-  renderPostForm,
+  renderFoodPostById,
+  renderFoodPostForm,
   renderOrderForm,
   renderProfilePage,
   renderWatchList,
@@ -12,13 +12,14 @@ const {
 const router = Router();
 
 router.use("/dashboard", renderDashboard);
-router.use("/post/:postId", renderPostById);
-router.use("/post/create", renderPostForm);
-router.use("/post/:postId/order", renderOrderForm);
+
+router.use("/food-post/view/:postId", renderFoodPostById);
+router.use("/food-post/create", renderFoodPostForm);
+router.use("/food-post/:postId/order", renderOrderForm);
 
 router.use("/profile/:profileId", renderProfilePage);
 
-router.use("/watchList", renderWatchList);
+router.use("/watch-list", renderWatchList);
 
 router.use("/inbox", renderInbox);
 

@@ -1,9 +1,10 @@
 const connection = require("../config/connection");
-const seedComments = require("./comment-seeds");
-const seedFoodType = require("./foodType-seeds");
-const seedOrders = require("./order-seed");
-const seedPosts = require("./post-seeds");
-const seedUsers = require("./user-seeds");
+const seedComments = require("./comment");
+const seedFoodType = require("./foodType");
+const seedOrders = require("./order");
+const seedPosts = require("./post");
+const seedUsers = require("./user");
+const seedWatchList = require("./watchList");
 
 const seedAll = async () => {
   await connection.sync({ force: true });
@@ -23,6 +24,9 @@ const seedAll = async () => {
 
   await seedOrders();
   console.log("\n----- ORDERS SEEDED -----\n");
+
+  await seedWatchList();
+  console.log("\n----- WatchList SEEDED -----\n");
 
   process.exit(0);
 };

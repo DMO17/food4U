@@ -1,20 +1,20 @@
 const renderDashboard = (req, res) => {
   res.render("dashboard");
 };
-const renderPostById = (req, res) => {
-  res.render("postById");
+const renderFoodPostById = (req, res) => {
+  res.render("food-post");
 };
-const renderPostForm = (req, res) => {
-  res.render("postForm");
+const renderFoodPostForm = (req, res) => {
+  res.render("create-food-post");
 };
 const renderOrderForm = (req, res) => {
-  res.render("orderForm");
+  res.render("order-form");
 };
 const renderProfilePage = (req, res) => {
   res.render("profile-page");
 };
 const renderWatchList = (req, res) => {
-  res.render("watchList");
+  res.render("watch-list");
 };
 const renderInbox = (req, res) => {
   res.render("inbox");
@@ -22,8 +22,8 @@ const renderInbox = (req, res) => {
 
 module.exports = {
   renderDashboard,
-  renderPostById,
-  renderPostForm,
+  renderFoodPostById,
+  renderFoodPostForm,
   renderOrderForm,
   renderProfilePage,
   renderWatchList,
