@@ -4,6 +4,11 @@ const {
   updateFoodPostById,
   deleteFoodPostById,
 } = require("../../controller/api/food-post");
+const {
+  orderFoodPostById,
+  updateOrderFoodPostById,
+  deleteOrderFoodPostById,
+} = require("../../controller/api/order");
 
 const router = Router();
 
