@@ -30,3 +30,8 @@ POST: /food-post , createFoodPost
 PUT: /food-post/:uuid , createFoodPost 
 DELETE:  /food-post/:uuid , createFoodPost 
 
+order routes 
+
+POST: /food-post/:uuid/order , orderFoodPostById 
+
+
