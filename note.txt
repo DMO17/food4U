@@ -21,3 +21,12 @@ post routes:
 
 /inbox
 
+
+api routes 
+
+GET: /food-post  , getAllFoodPost 
+GET: /food-post/:uuid  , getAllFoodPost 
+POST: /food-post , createFoodPost 
+PUT: /food-post/:uuid , createFoodPost 
+DELETE:  /food-post/:uuid , createFoodPost 
+
