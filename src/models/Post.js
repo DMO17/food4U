@@ -49,13 +49,10 @@ const schema = {
     },
     onDelete: "cascade",
   },
-  food_type_id: {
-    type: DataTypes.INTEGER,
-    references: {
-      model: "foodType",
-      key: "id",
-    },
-    onDelete: "cascade",
+  food_type: {
+    type: ENUM,
+    defaultValue: "Meal",
+    values: ["Grocery", "Meal", "Desert"],
   },
   item: {
     type: ENUM,
