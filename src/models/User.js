@@ -1,6 +1,7 @@
 const { Model, DataTypes } = require("sequelize");
 const bcrypt = require("bcrypt");
 const connection = require("../config/connection");
+const hashPassword = require("../hooks/hashpassword");
 
 const schema = {
   id: {
