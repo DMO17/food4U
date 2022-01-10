@@ -1,0 +1,25 @@
+.body {
+  margin: 5rem;
+  border: solid black;
+}
+.post-img {
+  height: 25rem;
+  width: 20rem;
+}
+
+.view-btn {
+  border-radius: 2rem;
+}
+
+.order-btn {
+  border-radius: 2rem;
+}
+
+.watch-list-btn {
+  border-radius: 2rem;
+}
+
+.pick-up-point img {
+  height: 25px;
+  width: 25px;
+}
