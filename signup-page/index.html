@@ -20,74 +20,132 @@
     <title>Blog App | Handlebars</title>
   </head>
   <body>
-    <main class="bg-white shadow rounded overflow-hidden container mt-5">
+    <main
+      class="bg-white shadow rounded overflow-hidden container mt-5 col-md-7"
+    >
       <!-- Signup form -->
       <form>
-        <h1 class="card-title text-center mb-3 mt-3">Signup</h1>
-        <div class="form-row">
-          <div class="form-group col-md-6">
-            <label for="inputEmail4">First name</label>
+        <!-- Form title -->
+        <h1 class="card-title mt-3 mb-4 text-center">Sign up</h1>
+
+        <div class="row">
+          <!-- First name -->
+          <div class="mb-4 col-md-5 mx-auto">
+            <label class="mb-1"
+              >First Name<span class="text-danger">*</span></label
+            >
+            <input
+              type="text"
+              name="fname"
+              class="form-control"
+              placeholder="Enter First Name"
+            />
+          </div>
+
+          <!-- Last name -->
+          <div class="mb-4 col-md-5 mx-auto">
+            <label class="mb-1"
+              >Last Name<span class="text-danger">*</span></label
+            >
+            <input
+              type="text"
+              name="lname"
+              class="form-control"
+              placeholder="Enter Last Name"
+            />
+          </div>
+
+          <!-- User name -->
+          <div class="mb-4 col-md-5 mx-auto">
+            <label class="mb-1"
+              >User Name<span class="text-danger">*</span></label
+            >
+            <input
+              type="text"
+              name="user-name"
+              class="form-control"
+              placeholder="Enter User Name"
+            />
+          </div>
+
+          <!-- Email -->
+          <div class="mb-4 col-md-5 mx-auto">
+            <label class="mb-1"
+              >Email Address<span class="text-danger">*</span></label
+            >
             <input
               type="email"
+              name="email"
               class="form-control"
-              id="inputEmail4"
-              placeholder="Email"
+              placeholder="Enter Email Address"
             />
           </div>
-          <div class="form-group col-md-6">
-            <label for="inputPassword4">Password</label>
+
+          <!-- Password -->
+          <div class="mb-4 col-md-5 mx-auto">
+            <label class="mb-1"
+              >Password<span class="text-danger">*</span></label
+            >
             <input
               type="password"
+              name="password"
               class="form-control"
-              id="inputPassword4"
-              placeholder="Password"
+              placeholder="Enter Password"
             />
           </div>
-        </div>
-        <div class="form-group">
-          <label for="inputAddress">Address</label>
+
+          <!-- Phone number -->
+          <div class="mb-4 col-md-5 mx-auto">
+            <label class="mb-1">Phone Number</label>
+            <input
+              type="tel"
+              name="number"
+              class="form-control"
+              placeholder="Enter Your Phone Number (optional)"
+            />
+          </div>
+
+        <!-- City -->
+        <div class="mb-4 col-md-5 mx-auto">
+          <label class="mb-1">City<span class="text-danger">*</span></label>
           <input
             type="text"
+            name="city"
             class="form-control"
-            id="inputAddress"
-            placeholder="1234 Main St"
+            placeholder="Enter Your City"
           />
         </div>
-        <div class="form-group">
-          <label for="inputAddress2">Address 2</label>
+
+        <!-- Profile image URL -->
+        <div class="mb-4 col-md-5 mx-auto">
+          <label class="mb-1">Profile Image URL</label>
+          <input
+            type="url"
+            name="profile-url"
+            class="form-control"
+            placeholder="Enter Your Profile Image URL (optional)"
+          />
+        </div>
+
+        <!-- Description -->
+        <div class="mb-4 col-md-11 mx-auto">
+          <label class="mb-1">Profile Description</label>
           <input
             type="text"
+            name="description"
             class="form-control"
-            id="inputAddress2"
-            placeholder="Apartment, studio, or floor"
+            placeholder="Enter Your Profile Description (optional)"
           />
         </div>
-        <div class="form-row">
-          <div class="form-group col-md-6">
-            <label for="inputCity">City</label>
-            <input type="text" class="form-control" id="inputCity" />
-          </div>
-          <div class="form-group col-md-4">
-            <label for="inputState">State</label>
-            <select id="inputState" class="form-control">
-              <option selected>Choose...</option>
-              <option>...</option>
-            </select>
-          </div>
-          <div class="form-group col-md-2">
-            <label for="inputZip">Zip</label>
-            <input type="text" class="form-control" id="inputZip" />
-          </div>
+      </div>
         </div>
-        <div class="form-group">
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" id="gridCheck" />
-            <label class="form-check-label" for="gridCheck">
-              Check me out
-            </label>
-          </div>
+
+        <!-- Sign up button -->
+        <div class="text-center">
+          <button type="submit" class="btn btn-primary btn-lg mt-3">
+            Sign up
+          </button>
         </div>
-        <button type="submit" class="btn btn-primary">Sign in</button>
       </form>
     </main>
 
