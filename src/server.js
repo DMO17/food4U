@@ -1,4 +1,5 @@
 // npm packages imports
+require("dotenv").config();
 const express = require("express");
 const expressHandlebars = require("express-handlebars");
 const path = require("path");
