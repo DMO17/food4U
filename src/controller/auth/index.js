@@ -6,15 +6,17 @@ const { User } = require("../../models");
 
 const login = async (req, res) => {
   try {
+    const errorMessage = "Failed to login";
     const postBody = getPayloadWithValidFieldsOnly(
       ["email", "password"],
       req.body
     );
 
     if (Object.keys(postBody).length != 2) {
-      return res.json({
+      console.log(`[ERROR]: ${errorMessage} | invalid fields`);
+      return res.status(400).json({
         success: false,
-        message: "Please Provide The Correct Post Body Fields",
+        message: errorMessage,
       });
     }
 
@@ -23,9 +25,10 @@ const login = async (req, res) => {
     });
 
     if (!appUser) {
-      return res.json({
+      console.log(`[ERROR]: ${errorMessage} | user does not exist`);
+      return res.status(401).json({
         success: false,
-        message: `An Account with the email ${postBody.email} Doesn't Exist`,
+        message: errorMessage,
       });
     }
 
@@ -34,9 +37,10 @@ const login = async (req, res) => {
     );
 
     if (!checkUserInputPassword) {
-      return res.json({
+      console.log(`[ERROR]: ${errorMessage} | invalid password`);
+      return res.status(401).json({
         success: false,
-        message: `Incorrect Password, Your Not Authorized to Access this Account`,
+        message: errorMessage,
       });
     }
 
@@ -44,7 +48,6 @@ const login = async (req, res) => {
       id: appUser.get("id"),
       email: appUser.get("email"),
       username: appUser.get("username"),
-      id: appUser.get("id"),
       full_name: `${appUser.get("first_name")} ${appUser.get("last_name")}`,
     };
 
@@ -54,20 +57,22 @@ const login = async (req, res) => {
 
       return res.json({
         success: true,
-        message: "Logged in Successfully",
-        data: req.session.user,
+        message: "Logged in successfully",
       });
     });
   } catch (error) {
-    return res.json({
+    console.log(`[ERROR]: ${errorMessage} | ${error.message}`);
+    return res.status(500).json({
       success: false,
-      message: `Failed To Log in => ${error.message}`,
+      message: errorMessage,
     });
   }
 };
 
-const signUp = (req, res) => {
+const signUp = async (req, res) => {
   try {
+    const errorMessage = "Failed to signup";
+
     const payload = getPayloadWithValidFieldsOnly(
       [
         "first_name",
@@ -83,46 +88,50 @@ const signUp = (req, res) => {
       req.body
     );
 
-    if (
-      !isAllRequiredFieldsPresent(
-        ["first_name", "last_name", "email", "username", "password"],
-        payload
-      )
-    ) {
+    const checkAllRequiredField = isAllRequiredFieldsPresent(
+      ["first_name", "last_name", "email", "username", "password"],
+      payload
+    );
+
+    if (!checkAllRequiredField) {
+      console.log(
+        `[ERROR]: ${errorMessage} | Please Provide The Correct required Post Body Fields`
+      );
       return res.status(500).json({
         success: false,
-        message: "Please Provide The Correct required Post Body Fields",
+        message: errorMessage,
       });
     }
 
-    const newUser = User.create(payload);
+    const newUser = await User.create(payload);
     return res.json({ success: true, data: newUser });
   } catch (error) {
-    console.log(`[ERROR]: Create user failed | ${error.message}`);
+    console.log(`[ERROR]: ${errorMessage} | ${error.message}`);
     return res.status(500).json({
       success: false,
-      error: `Failed to create user => ${error.message}`,
+      message: errorMessage,
     });
   }
 };
 
-const logOut = (req, res) => {
+const logOut = async (req, res) => {
   try {
+    const errorMessage = "Failed to logout user";
     if (req.session.loggedIn) {
       req.session.destroy(() => {
-        return res.json({ success: true, data: "successfully logged out" });
+        return res.json({ success: true, message: "Successfully logged out" });
       });
     } else {
       return res.status(500).json({
         success: false,
-        error: "failed to log user out",
+        error: errorMessage,
       });
     }
   } catch (error) {
-    console.log(`[ERROR]: LogOut user failed | ${error.message}`);
+    console.log(`[ERROR]: ${errorMessage} | ${error.message}`);
     return res.status(500).json({
       success: false,
-      error: `Failed to LogOut user => ${error.message}`,
+      error: errorMessage,
     });
   }
 };

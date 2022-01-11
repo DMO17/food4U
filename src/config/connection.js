@@ -1,23 +1,6 @@
+require("dotenv").config();
+
 const Sequelize = require("sequelize");
-
-// const connection = new Sequelize(
-//   // Database name
-//   "food4u_db",
-//   // User
-//   "root",
-//   // Password
-//   "Password123",
-//   {
-//     // Database location
-//     host: "localhost",
-//     dialect: "mysql",
-//     port: 3306,
-//   }
-// );
-
-// module.exports = connection;
-
-// const connection = require("sequelize");
 
 const dbName = process.env.DB_NAME;
 const dbUser = process.env.DB_USER;

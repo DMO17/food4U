@@ -11,12 +11,12 @@ const routes = require("./routes");
 
 // setting up server
 
-const PORT = 4000;
+const PORT = process.env.PORT || 4000;
 const app = express();
 
 //session
 const sessionOptions = {
-  secret: "Super secret secret",
+  secret: process.env.SESSION_SECRET,
   cookie: {
     // Stored in milliseconds (86400 === 1 day)
     maxAge: 8640000,
