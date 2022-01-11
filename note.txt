@@ -35,3 +35,19 @@ order routes
 POST: /food-post/:uuid/order , orderFoodPostById 
 
 
+
+
+
+auth api 
+log in, 
+sign up , 
+log out , 
+
+and authentication
+
+
+create a simple sign in [email password]
+
+create a sign up [....]
+
+.env 

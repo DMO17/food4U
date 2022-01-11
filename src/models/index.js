@@ -11,9 +11,9 @@ const WatchList = require("./WatchList");
 User.hasMany(Post, { foreignKey: "user_id" });
 Post.belongsTo(User, { foreignKey: "user_id" });
 
-// Post and FoodType
-FoodType.hasMany(Post, { foreignKey: "food_type_id" });
-Post.belongsTo(FoodType, { foreignKey: "food_type_id" });
+// // Post and FoodType
+// FoodType.hasMany(Post, { foreignKey: "food_type_id" });
+// Post.belongsTo(FoodType, { foreignKey: "food_type_id" });
 
 // ----RELATIONSHIP ON COMMENT TABLE----
 
