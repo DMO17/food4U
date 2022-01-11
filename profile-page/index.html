@@ -14,100 +14,42 @@
   </head>
   <body>
     <main class="bg-white shadow rounded overflow-hidden container mt-5">
-      <div class="profile-header">
-        <div class="px-4 pb-4 mt-3 cover">
-          <div class="media align-items-end profile-head">
-            <div class="profile mr-3">
-              <img
-                src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80"
-                alt="..."
-                width="130"
-                class="rounded mb-2 img-thumbnail"
-              />
-            </div>
-            <div class="media-body mb-5 text-white">
-              <h4 class="mt-0 mb-0">Mark Williams</h4>
-              <p class="small mb-4">
-                <i class="fas fa-map-marker-alt mr-2"></i>New York
-              </p>
-            </div>
+      <h1>Login</h1>
+      <form>
+        <div class="row mb-3">
+          <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+          <div class="col-sm-10">
+            <input type="email" class="form-control" id="inputEmail3" />
           </div>
         </div>
-        <div class="bg-light p-4 d-flex justify-content-end text-center">
-          <ul class="list-inline mb-0">
-            <li class="list-inline-item">
-              <h5 class="font-weight-bold mb-0 d-block">215</h5>
-              <small class="text-muted">
-                <i class="fas fa-image mr-1"></i>Posts</small
-              >
-            </li>
-            <li class="list-inline-item">
-              <h5 class="font-weight-bold mb-0 d-block">745</h5>
-              <small class="text-muted">
-                <i class="fas fa-user mr-1"></i>Sales</small
-              >
-            </li>
-            <li class="list-inline-item">
-              <h5 class="font-weight-bold mb-0 d-block">340</h5>
-              <small class="text-muted">
-                <i class="fas fa-user mr-1"></i>Watch-List</small
-              >
-            </li>
-          </ul>
-        </div>
-        <div class="mx-4 my-3">
-          <h5 class="mb-2">About</h5>
-          <div class="p-4 rounded shadow-sm bg-light">
-            <p class="font-italic mb-0">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi
-              laborum quasi nam minus adipisci ullam repellendus officia dicta
-              aliquid, sapiente deserunt inventore itaque eligendi consequuntur
-              soluta quis reiciendis quos aperiam labore facere autem. Tempora
-              voluptate alias ratione earum doloribus id iste dignissimos a
-              architecto culpa. Quae numquam ad ab eos!
-            </p>
+        <div class="row mb-3">
+          <label for="inputPassword3" class="col-sm-2 col-form-label"
+            >Password</label
+          >
+          <div class="col-sm-10">
+            <input type="password" class="form-control" id="inputPassword3" />
           </div>
         </div>
-      </div>
-
-      <div class="mx-4 my-3 d-flex flex-wrap flex-row justify-content-center">
-        <div class="example m-2">
-          <h2>Image Card</h2>
-          <article class="card depth--two">
-            <figure class="image">
-              <img
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShb6jzeLnqoTaV7zC3cBUwZwkbwB1qSMyYGw&usqp=CAU"
-                alt="City picture via LoremPixel"
-              />
-            </figure>
-            <div class="card__body">
-              <header class="card__primary-title">
-                <h2 class="text-large">Food Name</h2>
-                <h3 class="text-secondary text-normal text-small">Food Type</h3>
-              </header>
-              <div class="card__supporting-text">
-                <ul>
-                  <ol>
-                    Pick up point: location(icon)
-                  </ol>
-
-                  <ol>
-                    Status: Availability(icon)
-                  </ol>
-
-                  <ol>
-                    date: date posted
-                  </ol>
-                </ul>
-              </div>
+       
+      
+        <button type="submit" class="btn btn-primary">Log in</button>
+        <fieldset class="row mb-3 mx-auto">
+          <div class="text-center mt-5">
+            Do you want to create an account?
+          </div> 
+          <button
+            class="col-sm-10 offset-sm-2 mt-3"
+            type="submit"
+            class="btn btn-primary"
+          >
+            Sign Up
+          </button>
+          <div class="col-sm-10">
+           
             </div>
-            <footer class="card__actions">
-              <a class="btn" href="#">Action 1</a>
-              <a class="btn" href="#">Action 2</a>
-            </footer>
-          </article>
-        </div>
-      </div>
+          </div>
+        </fieldset>
+      </form>
     </main>
 
     <script
