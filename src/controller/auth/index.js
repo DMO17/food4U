@@ -67,41 +67,64 @@ const login = async (req, res) => {
 };
 
 const signUp = (req, res) => {
-  const payload = getPayloadWithValidFieldsOnly(
-    [
-      "first_name",
-      "last_name",
-      "email",
-      "username",
-      "password",
-      // "location",
-      "profile_url",
-      "description",
-      "phone_num",
-    ],
-    req.body
-  );
+  try {
+    const payload = getPayloadWithValidFieldsOnly(
+      [
+        "first_name",
+        "last_name",
+        "email",
+        "username",
+        "password",
+        // "location",
+        "profile_url",
+        "description",
+        "phone_num",
+      ],
+      req.body
+    );
 
-  if (
-    !isAllRequiredFieldsPresent(
-      ["first_name", "last_name", "email", "username", "password"],
-      payload
-    )
-  ) {
+    if (
+      !isAllRequiredFieldsPresent(
+        ["first_name", "last_name", "email", "username", "password"],
+        payload
+      )
+    ) {
+      return res.status(500).json({
+        success: false,
+        message: "Please Provide The Correct required Post Body Fields",
+      });
+    }
+
+    const newUser = User.create(payload);
+    return res.json({ success: true, data: newUser });
+  } catch (error) {
+    console.log(`[ERROR]: Create user failed | ${error.message}`);
     return res.status(500).json({
       success: false,
-      message: "Please Provide The Correct required Post Body Fields",
+      error: `Failed to create user => ${error.message}`,
     });
   }
-
-  const newUser = User.create(payload);
-  return res.json({ success: true, data: newUser });
-
-  res.json({ message: "signUp" });
 };
 
 const logOut = (req, res) => {
-  res.json({ message: "logOut" });
+  try {
+    if (req.session.loggedIn) {
+      req.session.destroy(() => {
+        return res.json({ success: true, data: "successfully logged out" });
+      });
+    } else {
+      return res.status(500).json({
+        success: false,
+        error: "failed to log user out",
+      });
+    }
+  } catch (error) {
+    console.log(`[ERROR]: LogOut user failed | ${error.message}`);
+    return res.status(500).json({
+      success: false,
+      error: `Failed to LogOut user => ${error.message}`,
+    });
+  }
 };
 
 module.exports = { login, signUp, logOut };
