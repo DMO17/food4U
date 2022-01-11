@@ -1,4 +1,7 @@
-const { getPayloadWithValidFieldsOnly } = require("../../helper");
+const {
+  getPayloadWithValidFieldsOnly,
+  isAllRequiredFieldsPresent,
+} = require("../../helper");
 const { User } = require("../../models");
 
 const login = async (req, res) => {
@@ -64,6 +67,36 @@ const login = async (req, res) => {
 };
 
 const signUp = (req, res) => {
+  const payload = getPayloadWithValidFieldsOnly(
+    [
+      "first_name",
+      "last_name",
+      "email",
+      "username",
+      "password",
+      // "location",
+      "profile_url",
+      "description",
+      "phone_num",
+    ],
+    req.body
+  );
+
+  if (
+    !isAllRequiredFieldsPresent(
+      ["first_name", "last_name", "email", "username", "password"],
+      payload
+    )
+  ) {
+    return res.status(500).json({
+      success: false,
+      message: "Please Provide The Correct required Post Body Fields",
+    });
+  }
+
+  const newUser = User.create(payload);
+  return res.json({ success: true, data: newUser });
+
   res.json({ message: "signUp" });
 };
 

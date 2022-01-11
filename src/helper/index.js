@@ -5,4 +5,7 @@ const getPayloadWithValidFieldsOnly = (validFields, payload) =>
     {}
   );
 
-module.exports = { getPayloadWithValidFieldsOnly };
+const isAllRequiredFieldsPresent = (fields, payload) =>
+  fields.every((field) => Object.keys(payload).includes(field));
+
+module.exports = { getPayloadWithValidFieldsOnly, isAllRequiredFieldsPresent };
