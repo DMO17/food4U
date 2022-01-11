@@ -8,8 +8,8 @@ const userData = [
     email: "aaron12@gmail.com",
     password: "imabadman12",
     // phone_num: 12345678910,
-    city: "London",
-    location: "12 Earlslane n23 6xy ",
+    // city: "London",
+    // location: "12 Earlslane n23 6xy ",
     profile_url:
       "https://whatsondisneyplus.com/wp-content/uploads/2021/09/bart-.png",
     description:
@@ -22,8 +22,8 @@ const userData = [
     email: "15kcpat@gmail.com",
     password: "kelcetyreek",
     // phone_num: 15345678918,
-    city: "Manchester",
-    location: "345 Chester avenue m16 7wk ",
+    // city: "Manchester",
+    // location: "345 Chester avenue m16 7wk ",
     // profile_url: "",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
