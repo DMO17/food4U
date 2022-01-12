@@ -69,5 +69,4 @@ const handleLoginFormSubmission = async (event) => {
 };
 
 signupFrom.on("submit", handleSignupFormSubmission);
-
 loginForm.on("submit", handleLoginFormSubmission);
