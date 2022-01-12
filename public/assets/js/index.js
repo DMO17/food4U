@@ -1,4 +1,6 @@
-const signupFrom = $(".signup-form");
+// Handle signup and login
+const signupFrom = $("#signup-form");
+const loginForm = $("#login-form");
 
 const handleSignupFormSubmission = async (event) => {
   event.preventDefault();
@@ -23,7 +25,6 @@ const handleSignupFormSubmission = async (event) => {
       password,
       first_name,
       last_name,
-      description: "",
     }),
     redirect: "follow",
   });
@@ -37,4 +38,36 @@ const handleSignupFormSubmission = async (event) => {
   }
 };
 
+// Handle login
+
+const handleLoginFormSubmission = async (event) => {
+  event.preventDefault();
+
+  const email = $("#email").val();
+  const password = $("#password").val();
+
+  console.log(email, password);
+
+  const response = await fetch("/auth/login", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      email,
+      password,
+    }),
+  });
+
+  const data = await response.json();
+
+  console.log(data);
+
+  if (data.success) {
+    window.location.replace("/dashboard");
+  }
+};
+
 signupFrom.on("submit", handleSignupFormSubmission);
+
+loginForm.on("submit", handleLoginFormSubmission);

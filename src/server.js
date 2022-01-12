@@ -28,14 +28,13 @@ const sessionOptions = {
   }),
 };
 
-app.use(session(sessionOptions));
-
 //handlebars
 const hbs = expressHandlebars.create({});
 app.engine("handlebars", hbs.engine);
 app.set("view engine", "handlebars");
 
 //middleware
+app.use(session(sessionOptions));
 app.use(express.static(path.join(__dirname, "../public")));
 app.use(express.json({ extended: true }));
 app.use(express.urlencoded({ extended: true }));
