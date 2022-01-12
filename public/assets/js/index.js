@@ -1,6 +1,7 @@
 // Handle signup and login
 const signupFrom = $("#signup-form");
 const loginForm = $("#login-form");
+const logoutBtn = $("#logout");
 
 const handleSignupFormSubmission = async (event) => {
   event.preventDefault();
@@ -68,5 +69,23 @@ const handleLoginFormSubmission = async (event) => {
   }
 };
 
+// Logout handle
+const handleLogout = async (event) => {
+  event.preventDefault();
+
+  const response = await fetch("/auth/logout", {
+    method: "POST",
+  });
+
+  const data = await response.json();
+
+  console.log(data);
+
+  if (data.success) {
+    window.location.replace("/");
+  }
+};
+
 signupFrom.on("submit", handleSignupFormSubmission);
 loginForm.on("submit", handleLoginFormSubmission);
+logoutBtn.on("click", handleLogout);
