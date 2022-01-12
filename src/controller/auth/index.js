@@ -52,8 +52,8 @@ const login = async (req, res) => {
     };
 
     req.session.save(() => {
-      req.session.user === userInfo;
-      req.session.loggedIn === true;
+      req.session.user = userInfo;
+      req.session.loggedIn = true;
 
       return res.json({
         success: true,

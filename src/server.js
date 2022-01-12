@@ -1,11 +1,10 @@
-// npm packages imports
 require("dotenv").config();
 const express = require("express");
 const expressHandlebars = require("express-handlebars");
 const path = require("path");
 const session = require("express-session");
 const SequelizeStore = require("connect-session-sequelize")(session.Store);
-// global imports
+
 const connection = require("./config/connection");
 const routes = require("./routes");
 
@@ -18,8 +17,7 @@ const app = express();
 const sessionOptions = {
   secret: process.env.SESSION_SECRET,
   cookie: {
-    // Stored in milliseconds (86400 === 1 day)
-    maxAge: 8640000,
+    maxAge: 86400 * 1000,
   },
   resave: false,
   saveUninitialized: false,
