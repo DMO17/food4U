@@ -52,16 +52,16 @@ const schema = {
     },
   },
 
-  // city: {
-  //   type: DataTypes.STRING,
-  //   allowNull: true,
-  //   defaultValue: "birmingham",
-  // },
+  city: {
+    type: DataTypes.STRING,
+    allowNull: true,
+    defaultValue: "birmingham",
+  },
 
-  // location: {
-  //   type: DataTypes.STRING,
-  //   allowNull: false,
-  // },
+  location: {
+    type: DataTypes.STRING,
+    allowNull: true,
+  },
 
   profile_url: {
     type: DataTypes.STRING,
