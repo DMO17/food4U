@@ -44,6 +44,7 @@ const createFoodPost = async (req, res) => {
     }
 
     const payLoad = { user_id: req.session.user.id, ...validPostBodyFields };
+    // const payLoad = { user_id: 1, ...validPostBodyFields };
 
     const foodPost = await Post.create(payLoad);
 
@@ -99,8 +100,11 @@ const updateFoodPostById = async (req, res) => {
     }
 
     const payload = { user_id: req.session.user.id, ...validPostBodyFields };
+    // const payload = { user_id: 1, ...validPostBodyFields };
 
-    const data = await Post.update(payload, { where: { uuid, raw: true } });
+    const data = await Post.update(payload, {
+      where: { uuid: uuid },
+    });
 
     if (!data[0]) {
       console.log(
@@ -112,7 +116,7 @@ const updateFoodPostById = async (req, res) => {
       });
     }
 
-    return res.json({ data: foodPost });
+    return res.json({ data });
   } catch (error) {
     console.log(`[ERROR]: ${errorMessage} | ${error.message}`);
     return res.status(500).json({
@@ -122,7 +126,7 @@ const updateFoodPostById = async (req, res) => {
   }
 };
 
-const deleteFoodPostById = (req, res) => {
+const deleteFoodPostById = async (req, res) => {
   const errorMessage = "Failed to delete food post";
   try {
     const { uuid } = req.params;
