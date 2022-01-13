@@ -2,7 +2,7 @@ const {
   getPayloadWithValidFieldsOnly,
   isAllRequiredFieldsPresent,
 } = require("../../helper");
-const { Post } = require("../../models");
+const { Post, User } = require("../../models");
 
 const createFoodPost = async (req, res) => {
   const errorMessage = "Failed to create food post";
@@ -47,7 +47,7 @@ const createFoodPost = async (req, res) => {
 
     const foodPost = await Post.create(payLoad);
 
-    res.json({ data: foodPost });
+    return res.json({ data: foodPost });
   } catch (error) {
     console.log(`[ERROR]: ${errorMessage} | ${error.message}`);
     return res.status(500).json({
@@ -57,8 +57,69 @@ const createFoodPost = async (req, res) => {
   }
 };
 
-const updateFoodPostById = (req, res) => {
-  res.json({ message: "update food post" });
+const updateFoodPostById = async (req, res) => {
+  const errorMessage = "Failed to update food post";
+  try {
+    const { uuid } = req.params;
+
+    const validPostBodyFields = getPayloadWithValidFieldsOnly(
+      [
+        "food_name",
+        "description",
+        "food_url",
+        "price",
+        "location",
+        "food_type",
+        "item",
+        "status",
+      ],
+      req.body
+    );
+
+    const checkAllRequiredField = isAllRequiredFieldsPresent(
+      [
+        "food_name",
+        "description",
+        "food_url",
+        "price",
+        "location",
+        "food_type",
+      ],
+      validPostBodyFields
+    );
+
+    if (!checkAllRequiredField) {
+      console.log(
+        `[ERROR]: ${errorMessage} | Please Provide The Correct required Post Body Fields`
+      );
+      return res.status(500).json({
+        success: false,
+        message: errorMessage,
+      });
+    }
+
+    const payload = { user_id: req.session.user.id, ...validPostBodyFields };
+
+    const data = await Post.update(payload, { where: { uuid, raw: true } });
+
+    if (!data[0]) {
+      console.log(
+        `[ERROR]: ${errorMessage} | No food post with this ID exists`
+      );
+      return res.status(500).json({
+        success: false,
+        message: errorMessage,
+      });
+    }
+
+    return res.json({ data: foodPost });
+  } catch (error) {
+    console.log(`[ERROR]: ${errorMessage} | ${error.message}`);
+    return res.status(500).json({
+      success: false,
+      message: errorMessage,
+    });
+  }
 };
 
 const deleteFoodPostById = (req, res) => {
