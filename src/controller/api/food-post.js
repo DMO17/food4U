@@ -123,7 +123,30 @@ const updateFoodPostById = async (req, res) => {
 };
 
 const deleteFoodPostById = (req, res) => {
-  res.json({ message: "delete food post" });
+  const errorMessage = "Failed to delete food post";
+  try {
+    const { uuid } = req.params;
+
+    const data = await Post.destroy({ where: { uuid } });
+
+    if (!data) {
+      console.log(
+        `[ERROR]: ${errorMessage} | No food post with this ID exists`
+      );
+      return res.status(500).json({
+        success: false,
+        message: errorMessage,
+      });
+    }
+
+    return res.json({ data: "food post successfully deleted" });
+  } catch (error) {
+    console.log(`[ERROR]: ${errorMessage} | ${error.message}`);
+    return res.status(500).json({
+      success: false,
+      message: errorMessage,
+    });
+  }
 };
 
 module.exports = {
