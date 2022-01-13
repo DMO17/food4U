@@ -52,10 +52,11 @@ const schema = {
   food_type: {
     type: ENUM,
     defaultValue: "Meal",
-    values: ["Grocery", "Meal", "Desert"],
+    values: ["Grocery", "Meal", "Desert", "Beverages"],
   },
   item: {
     type: ENUM,
+    defaultValue: "Bundle",
     values: ["Single", "Bundle"],
   },
   status: {
