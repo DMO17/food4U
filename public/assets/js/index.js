@@ -89,7 +89,39 @@ const handleLogout = async (event) => {
 
 const handleFoodPostSubmission = (event) => {
   event.preventDefault();
-  console.log("submission");
+  const food_name = $("#food-title").val();
+  const food_url = $("#food-image-url").val();
+  const description = $("#food-description").val();
+  const price = $("#food-price").val();
+  const location = $("#food-address").val();
+  const food_type = $("#food-type").val();
+
+  console.log(food_name, food_url, description, price, location, food_type);
+
+  const response = await fetch("/auth/signup", {
+    method: "POST",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      food_name,
+      food_url,
+      description,
+      price,
+      location,
+      food_type,
+    }),
+    redirect: "follow",
+  });
+
+  const data = await response.json();
+
+  console.log(data);
+
+  if (data.success) {
+    window.location.replace("/dashboard");
+  }
 };
 
 signupFrom.on("submit", handleSignupFormSubmission);
