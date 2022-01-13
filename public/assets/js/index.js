@@ -2,6 +2,7 @@
 const signupFrom = $("#signup-form");
 const loginForm = $("#login-form");
 const logoutBtn = $("#logout");
+const foodPostForm = $("#food-post-form");
 
 const handleSignupFormSubmission = async (event) => {
   event.preventDefault();
@@ -86,6 +87,12 @@ const handleLogout = async (event) => {
   }
 };
 
+const handleFoodPostSubmission = (event) => {
+  event.preventDefault();
+  console.log("submission");
+};
+
 signupFrom.on("submit", handleSignupFormSubmission);
 loginForm.on("submit", handleLoginFormSubmission);
+foodPostForm.on("submit", handleFoodPostSubmission);
 logoutBtn.on("click", handleLogout);
