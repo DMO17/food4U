@@ -61,6 +61,7 @@ const schema = {
   },
   status: {
     type: ENUM,
+    defaultValue: "Available",
     values: ["Available", "Closed", "Reserved"],
   },
 };
