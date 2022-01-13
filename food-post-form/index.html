@@ -52,6 +52,20 @@
         <!-- Form title -->
         <h1 class="card-title mt-3 mb-4 text-center">Post New Food</h1>
 
+        <div class="mb-3 mx-auto col-md-6">
+          <label class="mb-2">Upload Food Image</label>
+          <br />
+          <input class="mb-3" id="food-image" type="file" accept="image/*" />
+          <br />
+          <label class="mb-2">...or use URL</label>
+          <input
+            id="food-image-url"
+            type="text"
+            class="form-control mb-4"
+            placeholder="https://"
+          />
+        </div>
+
         <!-- Food title -->
         <div class="mb-3 mx-auto col-md-6">
           <label class="mb-1">Food Title</label>
@@ -134,6 +148,16 @@
             <option>Grocery</option>
             <option>Meal</option>
             <option>Dessert</option>
+          </select>
+        </div>
+
+        <!-- Single or Bundle -->
+        <div class="mb-3 mx-auto col-md-6">
+          <label class="mb-1">Single or Bundle?</label>
+          <select id="food-item" class="form-control">
+            <option selected>Choose...</option>
+            <option>Single</option>
+            <option>Bundle</option>
           </select>
         </div>
 
