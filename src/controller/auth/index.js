@@ -52,8 +52,8 @@ const login = async (req, res) => {
     };
 
     req.session.save(() => {
-      req.session.user === userInfo;
-      req.session.loggedIn === true;
+      req.session.user = userInfo;
+      req.session.loggedIn = true;
 
       return res.json({
         success: true,
@@ -61,6 +61,7 @@ const login = async (req, res) => {
       });
     });
   } catch (error) {
+    const errorMessage = "Failed to login";
     console.log(`[ERROR]: ${errorMessage} | ${error.message}`);
     return res.status(500).json({
       success: false,
@@ -93,6 +94,8 @@ const signUp = async (req, res) => {
       payload
     );
 
+    console.log(payload);
+
     if (!checkAllRequiredField) {
       console.log(
         `[ERROR]: ${errorMessage} | Please Provide The Correct required Post Body Fields`
@@ -106,6 +109,7 @@ const signUp = async (req, res) => {
     const newUser = await User.create(payload);
     return res.json({ success: true, data: newUser });
   } catch (error) {
+    const errorMessage = "Failed to signup";
     console.log(`[ERROR]: ${errorMessage} | ${error.message}`);
     return res.status(500).json({
       success: false,
@@ -128,6 +132,8 @@ const logOut = async (req, res) => {
       });
     }
   } catch (error) {
+    const errorMessage = "Failed to logout user";
+
     console.log(`[ERROR]: ${errorMessage} | ${error.message}`);
     return res.status(500).json({
       success: false,

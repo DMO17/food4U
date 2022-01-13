@@ -1,0 +1,147 @@
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+  background-image: url("../images/background-image.jpg");
+  background-size: cover;
+}
+
+main {
+  background-color: rgba(255, 255, 255, 0.95);
+}
+
+.profile-head {
+  transform: translateY(4rem);
+}
+
+.cover {
+  background-image: url(https://images.unsplash.com/photo-1530305408560-82d13781b33a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1352&q=80);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.card {
+  display: grid;
+  grid-template-columns: 300px;
+  grid-template-rows: 210px 210px 80px;
+  grid-template-areas: "image" "text" "stats";
+  border-radius: 18px;
+  background: white;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.9);
+  font-family: roboto;
+  text-align: center;
+  background-color: rgb(198, 239, 255);
+}
+
+.card-text {
+  grid-area: text;
+  margin: 20px;
+}
+
+.card-text .username {
+  color: rgb(255, 168, 7);
+  font-size: 17px;
+  margin-top: 5px;
+}
+
+.card-text p {
+  color: rgb(37, 32, 32);
+  font-size: 14px;
+  font-weight: 300;
+  padding: 0;
+  margin: 3px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* number of lines to show */
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.location-point {
+  color: rgb(241, 2, 2);
+  font-size: 16px;
+  font-weight: 400;
+  padding: 0;
+  margin: 5px;
+  /* white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; */
+}
+
+.card-text h2 {
+  margin-top: 0px;
+  font-size: 28px;
+}
+
+.card-stats {
+  grid-area: stats;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  background: purple;
+}
+
+.card-stats .stat {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  color: white;
+  padding: 10px;
+}
+
+.card:hover {
+  transform: scale(1.1);
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.6);
+}
+.card {
+  transition: 0.5s ease;
+  cursor: pointer;
+  margin: 30px;
+}
+
+.food-type {
+  position: absolute;
+  top: 0;
+  padding: 0.8rem;
+  background-color: #e0222b;
+  font-size: 1.2rem;
+  letter-spacing: 0.2rem;
+  font-weight: 500;
+  padding: 3px;
+  color: rgb(6, 179, 127);
+  border-radius: 12px;
+}
+
+.food-price {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0.8rem;
+  background-color: #f5c518;
+  font-size: 1.2rem;
+  letter-spacing: 0.2rem;
+  font-weight: 500;
+  color: darkblue;
+  padding: 3px;
+  border-radius: 12px;
+}
+
+.food-post-date {
+  position: absolute;
+  top: 189;
+  /* top: 0; */
+  /* right: 140; */
+  left: 0;
+  padding: 0.8rem;
+  background-color: #3df518;
+  font-size: 0.9rem;
+  letter-spacing: 0.2rem;
+  font-weight: 500;
+  color: black;
+  padding: 0;
+}
