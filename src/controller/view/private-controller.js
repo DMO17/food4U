@@ -34,7 +34,7 @@ const renderFoodPostForm = (req, res) => {
 const renderOrderForm = (req, res) => {
   res.render("order-form");
 };
-const renderProfilePage = (req, res) => {
+const renderProfilePage = async (req, res) => {
   try {
     const { loggedIn } = req.session;
     const data = await Post.findAll({
@@ -46,6 +46,7 @@ const renderProfilePage = (req, res) => {
     const serializedData = {
       loggedIn,
       posts: data.map((posts) => posts.get({ plain: true })),
+      userInfo: { name: req.session.user.full_name },
     };
 
     console.log(serializedData);
