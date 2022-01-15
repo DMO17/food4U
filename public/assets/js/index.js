@@ -98,30 +98,43 @@ const handleFoodPostSubmission = async (event) => {
 
   console.log(food_name, food_url, description, price, location, food_type);
 
-  const response = await fetch("/api/food-post", {
-    method: "POST",
-    headers: {
-      Accept: "application/json",
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      food_name,
-      food_url,
-      description,
-      price,
-      location,
-      food_type,
-    }),
-    redirect: "follow",
-  });
+  if (food_name && food_url && description && price && location && food_type) {
+    const response = await fetch("/api/food-post", {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        food_name,
+        food_url,
+        description,
+        price,
+        location,
+        food_type,
+      }),
+      redirect: "follow",
+    });
 
-  const data = await response.json();
+    const data = await response.json();
 
-  console.log(data);
-  console.log(data.success);
+    if (data.success) {
+      window.location.replace("/dashboard");
+    } else {
+      const warning = `<div class="alert alert-success" role="alert">
+      Please fill in the required fields correctly
+      </div>`;
 
-  if (data.success) {
-    window.location.replace("/dashboard");
+      $("#alert-message").empty();
+      return $("#alert-message").append(warning);
+    }
+  } else {
+    const warning = `<div class="alert alert-success" role="alert">
+    Please fill in the required fields
+    </div>`;
+
+    $("#alert-message").empty();
+    return $("#alert-message").append(warning);
   }
 };
 
