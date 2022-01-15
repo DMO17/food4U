@@ -30,7 +30,26 @@ const renderOrderForm = (req, res) => {
   res.render("order-form");
 };
 const renderProfilePage = (req, res) => {
-  res.render("profile-page");
+  // res.render("profile-page")
+  try {
+    const { loggedIn } = req.session;
+    const data = await Post.findAll({
+      where: { user_id: req.session.user.id },
+      include: [{ model: User }],
+      // raw: true,
+    });
+
+    const serializedData = {
+      loggedIn,
+      posts: data.map((posts) => posts.get({ plain: true })),
+    };
+
+    console.log(serializedData);
+
+    res.render("profile-page", serializedData);
+  } catch (error) {
+    console.log(error.message);
+  }
 };
 const renderWatchList = (req, res) => {
   res.render("watch-list");
