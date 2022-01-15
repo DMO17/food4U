@@ -1,1 +1,20 @@
-<h1>All Food Posts From this Account</h1>
+{{>private-navbar}}
+
+<main class="bg-white shadow rounded overflow-hidden container mt-5">
+
+
+      <div class="mx-4 my-3">
+        <h1 class="mb-2 text-center">Posts</h1>
+      </div>
+
+    <div
+        class="mx-4 my-3 p-4 rounded shadow-sm  d-flex flex-wrap flex-row justify-content-center"
+      >
+
+    {{#each posts}}
+    {{>profile-food-card}}
+    {{/each}}
+
+    </div>
+
+</main>
