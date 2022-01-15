@@ -100,6 +100,44 @@ const renderProfilePage = async (req, res) => {
   }
 };
 
+const renderProfilePosts = async (req, res) => {
+  try {
+    const { loggedIn } = req.session;
+    const data = await Post.findAll({
+      where: { user_id: req.session.user.id },
+      include: [{ model: User }],
+      // raw: true,
+    });
+
+    const serializedData = {
+      loggedIn,
+      posts: data.map((posts) => posts.get({ plain: true })),
+      userInfo: {
+        name: req.session.user.full_name,
+        location: req.session.user.location,
+        profileUrl: req.session.user.profileImg,
+      },
+    };
+
+    // console.log(serializedData);
+
+    console.log(req.session.user.profileImg);
+
+    res.render("profile-posts", serializedData);
+  } catch (error) {
+    const errorMessage = "Failed to render profile data";
+    console.log(`[ERROR]: ${errorMessage} | ${error.message}`);
+    // return res.status(500).json({
+    //   success: false,
+    //   message: errorMessage,
+    // });
+  }
+};
+
+const renderProfileOrders = (req, res) => {
+  res.render("profile-orders");
+};
+
 const renderWatchList = (req, res) => {
   res.render("watch-list");
 };
@@ -114,6 +152,8 @@ module.exports = {
   renderFoodPostForm,
   renderOrderForm,
   renderProfilePage,
+  renderProfileOrders,
+  renderProfilePosts,
   renderWatchList,
   renderInbox,
 };
