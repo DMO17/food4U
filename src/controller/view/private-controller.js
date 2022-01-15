@@ -46,10 +46,16 @@ const renderProfilePage = async (req, res) => {
     const serializedData = {
       loggedIn,
       posts: data.map((posts) => posts.get({ plain: true })),
-      userInfo: { name: req.session.user.full_name },
+      userInfo: {
+        name: req.session.user.full_name,
+        location: req.session.user.location,
+        profileUrl: req.session.user.profileImg,
+      },
     };
 
-    console.log(serializedData);
+    // console.log(serializedData);
+
+    console.log(req.session.user.profileImg);
 
     res.render("profile-page", serializedData);
   } catch (error) {

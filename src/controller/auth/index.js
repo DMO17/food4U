@@ -48,6 +48,7 @@ const login = async (req, res) => {
       id: appUser.get("id"),
       email: appUser.get("email"),
       location: appUser.get("location"),
+      profileImg: appUser.get("profile_url"),
       username: appUser.get("username"),
       full_name: `${appUser.get("first_name")} ${appUser.get("last_name")}`,
     };
