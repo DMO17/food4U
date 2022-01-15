@@ -6,16 +6,16 @@
       <div class="media align-items-end profile-head">
         <div class="profile mr-3">
           <img
-            src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80"
+            src={{userInfo.profileUrl}}
             alt="..."
             width="170"
             class="rounded mb-2 img-thumbnail"
           />
         </div>
         <div class="media-body mb-5 text-white">
-          <h4 class="mt-0 mb-0">Mark Williams</h4>
+          <h4 class="mt-0 mb-0">{{userInfo.name}}</h4>
           <p class="small mb-4">
-            <i class="fas fa-map-marker-alt mr-2"></i>New York
+            <i class="fas fa-map-marker-alt mr-2"></i>{{userInfo.location}}
           </p>
         </div>
       </div>
@@ -53,5 +53,19 @@
       </div>
     </div>
   </div>
+
+      <div class="mx-4 my-3">
+        <h3 class="mb-2">Posts</h3>
+      </div>
+
+    <div
+        class="mx-4 my-3 p-4 rounded shadow-sm  d-flex flex-wrap flex-row justify-content-center"
+      >
+
+    {{#each posts}}
+    {{>profile-food-card}}
+    {{/each}}
+
+    </div>
 
 </main>
