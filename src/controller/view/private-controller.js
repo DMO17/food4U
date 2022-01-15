@@ -1,5 +1,24 @@
-const renderDashboard = (req, res) => {
-  res.render("dashboard");
+const { User, Post } = require("../../models");
+
+const renderDashboard = async (req, res) => {
+  try {
+    const { loggedIn } = req.session;
+    const data = await Post.findAll({
+      include: [{ model: User }],
+      // raw: true,
+    });
+
+    const serializedData = {
+      loggedIn,
+      posts: data.map((posts) => posts.get({ plain: true })),
+    };
+
+    console.log(serializedData);
+
+    res.render("dashboard", serializedData);
+  } catch (error) {
+    console.log(error.message);
+  }
 };
 const renderFoodPostById = (req, res) => {
   res.render("food-post");

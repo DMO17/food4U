@@ -1,7 +1,8 @@
 // Handle signup and login
-const signupFrom = $("#signup-form");
+const signupForm = $("#signup-form");
 const loginForm = $("#login-form");
 const logoutBtn = $("#logout");
+const foodPostForm = $("#food-post-form");
 
 const handleSignupFormSubmission = async (event) => {
   event.preventDefault();
@@ -86,6 +87,45 @@ const handleLogout = async (event) => {
   }
 };
 
-signupFrom.on("submit", handleSignupFormSubmission);
+const handleFoodPostSubmission = async (event) => {
+  event.preventDefault();
+  const food_name = $("#food-title").val();
+  const food_url = $("#food-image-url").val();
+  const description = $("#food-description").val();
+  const price = $("#food-price").val();
+  const location = $("#food-address").val();
+  const food_type = $("#food-type").val();
+
+  console.log(food_name, food_url, description, price, location, food_type);
+
+  const response = await fetch("/api/food-post", {
+    method: "POST",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      food_name,
+      food_url,
+      description,
+      price,
+      location,
+      food_type,
+    }),
+    redirect: "follow",
+  });
+
+  const data = await response.json();
+
+  console.log(data);
+  console.log(data.success);
+
+  if (data.success) {
+    window.location.replace("/dashboard");
+  }
+};
+
+signupForm.on("submit", handleSignupFormSubmission);
 loginForm.on("submit", handleLoginFormSubmission);
+foodPostForm.on("submit", handleFoodPostSubmission);
 logoutBtn.on("click", handleLogout);

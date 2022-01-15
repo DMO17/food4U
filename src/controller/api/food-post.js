@@ -48,7 +48,7 @@ const createFoodPost = async (req, res) => {
 
     const foodPost = await Post.create(payLoad);
 
-    return res.json({ data: foodPost });
+    return res.json({ success: true, data: foodPost });
   } catch (error) {
     console.log(`[ERROR]: ${errorMessage} | ${error.message}`);
     return res.status(500).json({
