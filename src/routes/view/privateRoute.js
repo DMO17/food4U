@@ -17,7 +17,7 @@ router.use("/food-post/view/:postId", renderFoodPostById);
 router.use("/food-post/create", renderFoodPostForm);
 router.use("/food-post/:postId/order", renderOrderForm);
 
-router.use("/profile/:profileId", renderProfilePage);
+router.use("/profile", renderProfilePage);
 
 router.use("/watch-list", renderWatchList);
 
