@@ -17,7 +17,12 @@ const renderDashboard = async (req, res) => {
 
     res.render("dashboard", serializedData);
   } catch (error) {
-    console.log(error.message);
+    const errorMessage = "Failed to render dashboard data";
+    console.log(`[ERROR]: ${errorMessage} | ${error.message}`);
+    // return res.status(500).json({
+    //   success: false,
+    //   message: errorMessage,
+    // });
   }
 };
 const renderFoodPostById = (req, res) => {
@@ -30,7 +35,6 @@ const renderOrderForm = (req, res) => {
   res.render("order-form");
 };
 const renderProfilePage = (req, res) => {
-  // res.render("profile-page")
   try {
     const { loggedIn } = req.session;
     const data = await Post.findAll({
@@ -48,7 +52,12 @@ const renderProfilePage = (req, res) => {
 
     res.render("profile-page", serializedData);
   } catch (error) {
-    console.log(error.message);
+    const errorMessage = "Failed to render profile data";
+    console.log(`[ERROR]: ${errorMessage} | ${error.message}`);
+    // return res.status(500).json({
+    //   success: false,
+    //   message: errorMessage,
+    // });
   }
 };
 const renderWatchList = (req, res) => {
