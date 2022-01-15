@@ -25,15 +25,47 @@ const renderDashboard = async (req, res) => {
     // });
   }
 };
-const renderFoodPostById = (req, res) => {
-  res.render("food-post");
+
+const renderFoodPostById = async (req, res) => {
+  try {
+    const { loggedIn } = req.session;
+
+    const username = req.session.user.username;
+
+    const { postId } = req.params;
+
+    const foodPostData = await Post.findAll({
+      where: { uuid: postId },
+      include: [{ model: User }],
+      // raw: true,
+    });
+
+    const serializedData = {
+      loggedIn,
+      posts: foodPostData.map((posts) => posts.get({ plain: true }))[0],
+      // foodPostData,
+    };
+
+    console.log(serializedData);
+
+    // if (!blogData) {
+    //   return res.render("no-blog");
+    // }
+
+    return res.render("food-post", serializedData);
+  } catch (error) {
+    console.log(error.message);
+  }
 };
+
 const renderFoodPostForm = (req, res) => {
   res.render("create-food-post");
 };
+
 const renderOrderForm = (req, res) => {
   res.render("order-form");
 };
+
 const renderProfilePage = async (req, res) => {
   try {
     const { loggedIn } = req.session;
@@ -67,9 +99,11 @@ const renderProfilePage = async (req, res) => {
     // });
   }
 };
+
 const renderWatchList = (req, res) => {
   res.render("watch-list");
 };
+
 const renderInbox = (req, res) => {
   res.render("inbox");
 };
