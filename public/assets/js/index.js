@@ -7,6 +7,8 @@ const foodPostForm = $("#food-post-form");
 const handleSignupFormSubmission = async (event) => {
   event.preventDefault();
 
+  const alertMessage = $("#alert-message");
+
   const first_name = $("#first-name").val();
   const last_name = $("#last-name").val();
   const email = $("#email").val();
@@ -33,6 +35,10 @@ const handleSignupFormSubmission = async (event) => {
         password,
         first_name,
         last_name,
+        location,
+        description,
+        profile_url,
+        phone_num,
       }),
       redirect: "follow",
     });
@@ -47,27 +53,39 @@ const handleSignupFormSubmission = async (event) => {
       const warning = `<div class="alert alert-success" role="alert">
        The email or username already has an account
       </div>`;
+      alertMessage.empty();
 
-      return signupForm.append(warning);
+      return alertMessage.append(warning);
     }
+  } else if (
+    !first_name ||
+    !last_name ||
+    !email ||
+    !username ||
+    !password ||
+    !confirmPassword
+  ) {
+    const warning = `<div class="alert alert-success" role="alert">
+    Please Fill out the required fields to sign-up
+  </div>`;
+
+    alertMessage.empty();
+    return alertMessage.append(warning);
   } else if (password === confirmPassword && password.length < 8) {
     const warning = `<div class="alert alert-success" role="alert">
      Your password must be have over 8 characters
     </div>`;
+    alertMessage.empty();
 
-    return signupForm.append(warning);
+    return alertMessage.append(warning);
   } else if (password != confirmPassword && password.length < 8) {
     const warning = `<div class="alert alert-success" role="alert">
     Your confirm password does'nt match
   </div>`;
 
-    return signupForm.append(warning);
-  } else {
-    const warning = `<div class="alert alert-success" role="alert">
-    Please Fill out the required fields to sign-up
-  </div>`;
+    alertMessage.empty();
 
-    return signupForm.append(warning);
+    return alertMessage.append(warning);
   }
 };
 
@@ -130,7 +148,7 @@ const handleFoodPostSubmission = async (event) => {
 
   console.log(food_name, food_url, description, price, location, food_type);
 
-  if (food_name && food_url && description && price && location && food_type) {
+  if (food_name && food_url && description && price && food_type) {
     const response = await fetch("/api/food-post", {
       method: "POST",
       headers: {
