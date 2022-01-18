@@ -65,7 +65,31 @@
     {{#each posts}}
     {{>profile-food-card}}
     {{/each}}
+    </div>   
+     <div class="container bg-light">
+        <div class="col-md-12 text-center">
+<a href="/profile/posts"><button type="button" class="btn btn-primary btn-lg">View all Posts</button></a>
+        </div>
+    </div>
+      
+      </div>
+      <div class="mx-4 my-3">
+        <h3 class="mb-2">Orders</h3>
+      </div>
+    <div
+        class="mx-4 my-3 p-4 rounded shadow-sm  d-flex flex-wrap flex-row justify-content-center"
+      >
+    {{#each posts}}
+    {{>profile-food-card}}
+    {{/each}}
+    </div>
 
+  <div class="container bg-light mb-3">
+        <div class="col-md-12 text-center">
+      <a href="/profile/orders"><button type="button" class="btn btn-primary btn-lg">View all Orders</button></a>
+        </div>
     </div>
 
 </main>
+
+ 
