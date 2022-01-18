@@ -90,7 +90,7 @@ const handleLogout = async (event) => {
 const handleFoodPostSubmission = async (event) => {
   event.preventDefault();
   const food_name = $("#food-title").val();
-  const food_url = $("#food-image-url").val();
+  const food_url = $("#food-image-url").val() || $("#food-image").val() ,
   const description = $("#food-description").val();
   const price = $("#food-price").val();
   const location = $("#food-address").val();

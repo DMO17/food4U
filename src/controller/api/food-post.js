@@ -15,7 +15,6 @@ const createFoodPost = async (req, res) => {
         "price",
         "location",
         "food_type",
-        "item",
         "status",
       ],
       req.body
@@ -71,7 +70,6 @@ const updateFoodPostById = async (req, res) => {
         "price",
         "location",
         "food_type",
-        "item",
         "status",
       ],
       req.body
