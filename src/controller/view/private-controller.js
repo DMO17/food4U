@@ -139,7 +139,7 @@ const renderProfileOrders = async (req, res) => {
     const { loggedIn } = req.session;
     const data = await Order.findAll({
       where: { user_id: req.session.user.id },
-      include: [{ model: User }, { model: Post }],
+      include: [{ model: Post }],
       // raw: true,
     });
 
@@ -148,8 +148,6 @@ const renderProfileOrders = async (req, res) => {
       order: data.map((orders) => orders.get({ plain: true })),
       userInfo: {
         name: req.session.user.full_name,
-        location: req.session.user.location,
-        profileUrl: req.session.user.profileImg,
       },
     };
 
