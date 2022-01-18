@@ -1,4 +1,4 @@
-const { User, Post } = require("../../models");
+const { User, Post, Order } = require("../../models");
 
 const renderDashboard = async (req, res) => {
   try {
@@ -134,8 +134,34 @@ const renderProfilePosts = async (req, res) => {
   }
 };
 
-const renderProfileOrders = (req, res) => {
-  res.render("profile-orders");
+const renderProfileOrders = async (req, res) => {
+  try {
+    const { loggedIn } = req.session;
+    const data = await Order.findAll({
+      where: { user_id: req.session.user.id },
+      include: [{ model: Post }],
+      // raw: true,
+    });
+
+    const serializedData = {
+      loggedIn,
+      order: data.map((orders) => orders.get({ plain: true })),
+      userInfo: {
+        name: req.session.user.full_name,
+      },
+    };
+
+    console.log(serializedData);
+
+    res.render("profile-orders", serializedData);
+  } catch (error) {
+    const errorMessage = "Failed to render profile data";
+    console.log(`[ERROR]: ${errorMessage} | ${error.message}`);
+    // return res.status(500).json({
+    //   success: false,
+    //   message: errorMessage,
+    // });
+  }
 };
 
 const renderWatchList = (req, res) => {

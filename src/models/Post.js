@@ -5,6 +5,7 @@ const connection = require("../config/connection");
 const schema = {
   id: {
     type: DataTypes.INTEGER,
+    primaryKey: true,
     allowNull: false,
     primaryKey: true,
     autoIncrement: true,
@@ -20,13 +21,11 @@ const schema = {
     allowNull: false,
   },
   description: {
-    type: DataTypes.STRING,
+    type: DataTypes.TEXT,
     allowNull: false,
   },
   food_url: {
     type: DataTypes.STRING,
-    defaultValue:
-      "https://www.pngitem.com/pimgs/m/150-1503945_transparent-user-png-default-user-image-png-png.png",
     allowNull: false,
   },
   price: {
@@ -52,17 +51,12 @@ const schema = {
   food_type: {
     type: ENUM,
     defaultValue: "Meal",
-    values: ["Grocery", "Meal", "Desert", "Beverages"],
-  },
-  item: {
-    type: ENUM,
-    defaultValue: "Bundle",
-    values: ["Single", "Bundle"],
+    values: ["Grocery", "Meal", "Dessert", "Drink"],
   },
   status: {
     type: ENUM,
     defaultValue: "Available",
-    values: ["Available", "Closed", "Reserved"],
+    values: ["Available", "Unavailable"],
   },
 };
 
