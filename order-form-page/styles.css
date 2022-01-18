@@ -14,11 +14,20 @@ main {
   margin-left: 3vw;
 }
 
+.buyer-summary {
+  margin-right: 5vw;
+}
+
+.buyer {
+  display: flex;
+}
+
 .food {
   display: flex;
 }
 
-.food-image {
+.food-image,
+.buyer-image {
   object-fit: fill;
   max-width: 125px;
   margin-right: 20px;

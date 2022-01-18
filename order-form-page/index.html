@@ -52,10 +52,12 @@
         <!-- Form title -->
         <h1 class="card-title mt-3 mb-4 text-center">Your Order</h1>
 
-        <!-- Summary -->
-        <div class="summary mb-5">
+        <hr>
 
-          <hr>
+        <!-- Summary -->
+        <div class="box d-flex flex-wrap flex-row justify-content-between">
+          
+        <div class="summary mb-5"> 
           <h2 class="card-title mt-3 mb-4">Summary</h1>
 
           <!-- Food 1 -->
@@ -67,8 +69,8 @@
             <div class="food-details">
               <!-- Title -->
               <h4>Food title</h3>
-                <!-- Description -->
-                <p>Food description</p>
+                <!-- Price -->
+                <p>Price: £2.00</p>
                 <!-- Seller -->
                 <p id="food-seller"><i class="fas fa-user icon"></i>Seller username</p>
                 <!-- Location -->
@@ -79,9 +81,37 @@
           
         </div>
 
+        <div class="buyer-summary">
+          <h2 class="card-title mt-3 mb-4">Your details</h1>
+           <!-- User -->
+           <div class="buyer">
+            <!-- User image thumbnail -->
+            <img src="./assets/images/user.png" class="buyer-image mb-3">
+
+            <!-- Buyer details -->
+            <div class="buyer-details">
+              <!-- Name -->
+              <h4>Name</h4>
+              <!-- Username -->
+              <p id="food-seller"><i class="fas fa-user
+                icon"></i>Username</p>
+                <!-- Email-->
+                <p id="food-seller"><i class="fas fa-envelope
+                   icon"></i>Email</p>
+
+                   <p id="food-seller"><i class="fas fa-map-marker-alt
+                    icon"></i>Location</p>
+            </div>
+            
+          </div>
+
+        </div>
+
+      </div>
+
         <div class="notes mb-4">
           <h3 class="mb-3">Notes</h3>
-          <textarea rows="2" cols="30" placeholder="Add any notes for the seller here."></textarea>
+          <textarea rows="2" cols="50" placeholder="Add any notes for the seller here."></textarea>
         </div>
 
         <!-- Place order button -->
