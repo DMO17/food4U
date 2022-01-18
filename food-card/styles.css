@@ -164,3 +164,14 @@ body {
   padding-top: 25px;
   border-radius: 10px;
 }
+
+.link {
+  text-decoration: none;
+  color: white;
+}
+
+.link:active,
+.link:visited,
+.link:focus {
+  color: white;
+}
