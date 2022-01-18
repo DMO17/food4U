@@ -17,31 +17,31 @@
       <i class="fas fa-times"></i>
     </h2>
 
-    <div class="username"><i class="fas fa-user"></i> {{User.username}}</div>
+    <a href="" class="username"><i class="fas fa-user"></i>
+      {{User.username}}</a>
 
     <div class="location-point">
       Location
       <i class="fas fa-map-marker-alt"></i>
       {{location}}
     </div>
-    <p>
-      {{description}}
-    </p>
+    <div class="food-post-date">
+      <i class="far fa-clock"></i>11/01/2022
+    </div>
+    <div class="food-type">{{food_type}}</div>
   </div>
+
   <div class="card-stats">
-    <div class="stat btn">
-      <div class="type"><a href="/food-post/view/{{uuid}}">VIEW</a></div>
+    <div class="stat-btn">
+      <div class="link"><a href="/food-post/view/{{uuid}}">VIEW</a></div>
     </div>
-    <div class="stat border btn">
-      <div class="type"><a href="/food-post/edit/{{uuid}}">EDIT</a></div>
+    <div class="stat-btn-1">
+      <div class="link"><a href="/food-post/edit/{{uuid}}">EDIT</a></div>
     </div>
-    <div class="stat btn">
+    <div class="stat-btn-2">
       <div class="type">DELETE</div>
     </div>
   </div>
-  <div class="food-type">{{food_type}}</div>
+
   <div class="food-price">£{{price}}</div>
-  <div class="food-post-date">
-    <i class="far fa-clock"></i>11/01/2022
-  </div>
 </div>

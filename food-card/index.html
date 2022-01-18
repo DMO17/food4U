@@ -31,7 +31,7 @@
         <div class="card">
           <div
             style="
-              background: url(https://digitalcontent.api.tesco.com/v2/media/ghs/4df99830-39cd-49be-b99f-721724276003/55fe71ad-1fa5-4d6b-87b7-41370f84cd92.jpeg?h=540&w=540);
+              background: url({{food_url}});
               grid-area: image;
               border-top-left-radius: 15px;
               border-top-right-radius: 15px;
@@ -42,29 +42,34 @@
           ></div>
           <div class="card-text">
             <h2 class="mb-0">
-              Food Name
-              <!-- <i class="fas fa-check-circle"></i>
-              <i class="fas fa-times"></i> -->
+              {{food_name}}
+              <i class="fas fa-check-circle"></i>
+              <i class="fas fa-times"></i>
             </h2>
 
-            <a href="" class="username"><i class="fas fa-user"></i> USERNAME</a>
+            <a href="" class="username"
+              ><i class="fas fa-user"></i> {{User.username}}</a
+            >
 
             <div class="location-point">
-              Location <i class="fas fa-map-marker-alt"></i> 298 Brookvale Rd,
-              Birmingham B23 7RT
+              Location <i class="fas fa-map-marker-alt"></i> {{location}}
             </div>
             <div class="food-post-date">
               <i class="far fa-clock"></i>11/01/2022
             </div>
-            <div class="food-type">Food-type</div>
+            <div class="food-type">{{food_type}}</div>
           </div>
 
           <div class="card-stats">
             <div class="stat-btn">
-              <div class="type">VIEW</div>
+              <div class="type">
+                <a href="/food-post/view/{{uuid}}">VIEW</a>
+              </div>
             </div>
             <div class="stat-btn-1">
-              <div class="type">ORDER</div>
+              <div class="type">
+                <a href="/food-post/{{uuid}}/order">ORDER</a>
+              </div>
             </div>
             <div class="stat-btn-2">
               <div class="type">Watch-list</div>
