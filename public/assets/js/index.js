@@ -12,31 +12,62 @@ const handleSignupFormSubmission = async (event) => {
   const email = $("#email").val();
   const username = $("#username").val();
   const password = $("#password").val();
+  const confirmPassword = $("#confirm-password").val();
+  const location = $("#location").val();
+  const description = $("#user-about").val();
+  const profile_url = $("#profile-img-url").val();
+  const phone_num = $("#phone-number").val();
 
   console.log(first_name, last_name, email, username, password);
 
-  const response = await fetch("/auth/signup", {
-    method: "POST",
-    headers: {
-      Accept: "application/json",
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      username,
-      email,
-      password,
-      first_name,
-      last_name,
-    }),
-    redirect: "follow",
-  });
+  if (password === confirmPassword && password.length > 8) {
+    const response = await fetch("/auth/signup", {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        username,
+        email,
+        password,
+        first_name,
+        last_name,
+      }),
+      redirect: "follow",
+    });
 
-  const data = await response.json();
+    const data = await response.json();
 
-  console.log(data);
+    console.log(data);
 
-  if (data.success) {
-    window.location.replace("/login");
+    if (data.success) {
+      window.location.replace("/login");
+    } else {
+      const warning = `<div class="alert alert-success" role="alert">
+       The email or username already has an account
+      </div>`;
+
+      return signupForm.append(warning);
+    }
+  } else if (password === confirmPassword && password.length < 8) {
+    const warning = `<div class="alert alert-success" role="alert">
+     Your password must be have over 8 characters
+    </div>`;
+
+    return signupForm.append(warning);
+  } else if (password != confirmPassword && password.length < 8) {
+    const warning = `<div class="alert alert-success" role="alert">
+    Your confirm password does'nt match
+  </div>`;
+
+    return signupForm.append(warning);
+  } else {
+    const warning = `<div class="alert alert-success" role="alert">
+    Please Fill out the required fields to sign-up
+  </div>`;
+
+    return signupForm.append(warning);
   }
 };
 
@@ -90,7 +121,8 @@ const handleLogout = async (event) => {
 const handleFoodPostSubmission = async (event) => {
   event.preventDefault();
   const food_name = $("#food-title").val();
-  const food_url = $("#food-image-url").val() || $("#food-image").val() ,
+  // const food_url = $("#food-image-url").val() || $("#food-image").val() ,
+  const food_url = $("#food-image-url").val();
   const description = $("#food-description").val();
   const price = $("#food-price").val();
   const location = $("#food-address").val();

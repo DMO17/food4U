@@ -1,132 +1,135 @@
 {{>public-navbar}}
-<main
-      class="bg-white shadow rounded overflow-hidden container mt-5 col-md-7"
-    >
-      <!-- Signup form -->
-      <form id="signup-form">
-        <!-- Form title -->
-        <h1 class="card-title mt-3 mb-4 text-center">Sign up</h1>
 
-        <div class="row">
-          <!-- First name -->
-          <div class="mb-4 col-md-5 mx-auto">
-            <label class="mb-1"
-              >First Name<span class="text-danger">*</span></label
-            >
-            <input
-              id="first-name"
-              type="text"
-              name="fname"
-              class="form-control"
-              placeholder="Enter First Name"
-            />
-          </div>
 
-          <!-- Last name -->
-          <div class="mb-4 col-md-5 mx-auto">
-            <label class="mb-1"
-              >Last Name<span class="text-danger">*</span></label
-            >
-            <input
-              id="last-name"
-              type="text"
-              name="lname"
-              class="form-control"
-              placeholder="Enter Last Name"
-            />
-          </div>
+<main class="bg-white shadow rounded overflow-hidden container mt-5 col-md-7">
+  <!-- Signup form -->
+  <form id="signup-form">
+    <!-- Form title -->
+    <h1 class="card-title mt-3 mb-4 text-center">Sign up</h1>
 
-          <!-- User name -->
-          <div class="mb-4 col-md-5 mx-auto">
-            <label class="mb-1"
-              >Username<span class="text-danger">*</span></label
-            >
-            <input
-              id="username"
-              type="text"
-              name="user-name"
-              class="form-control"
-              placeholder="Enter User Name"
-            />
-          </div>
+    <div class="row">
+      <!-- First name -->
+      <div class="mb-4 col-md-5 mx-auto">
+        <label class="mb-1">First Name<span class="text-danger">*</span></label>
+        <input
+          id="first-name"
+          type="text"
+          name="fname"
+          class="form-control"
+          placeholder="Enter First Name"
+        />
+      </div>
 
-          <!-- Email -->
-          <div class="mb-4 col-md-5 mx-auto">
-            <label class="mb-1"
-              >Email Address<span class="text-danger">*</span></label
-            >
-            <input
-              id="email"
-              type="email"
-              name="email"
-              class="form-control"
-              placeholder="Enter Email Address"
-            />
-          </div>
+      <!-- Last name -->
+      <div class="mb-4 col-md-5 mx-auto">
+        <label class="mb-1">Last Name<span class="text-danger">*</span></label>
+        <input
+          id="last-name"
+          type="text"
+          name="lname"
+          class="form-control"
+          placeholder="Enter Last Name"
+        />
+      </div>
 
-          <!-- Password -->
-          <div class="mb-4 col-md-5 mx-auto">
-            <label class="mb-1"
-              >Password<span class="text-danger">*</span></label
-            >
-            <input
-              id="password"
-              type="password"
-              name="password"
-              class="form-control"
-              placeholder="Enter Password"
-            />
-          </div>
+      <!-- User name -->
+      <div class="mb-4 col-md-5 mx-auto">
+        <label class="mb-1">Username<span class="text-danger">*</span></label>
+        <input
+          id="username"
+          type="text"
+          name="user-name"
+          class="form-control"
+          placeholder="Enter User Name"
+        />
+      </div>
 
-          <!-- Phone number -->
-          <div class="mb-4 col-md-5 mx-auto">
-            <label class="mb-1">Phone Number</label>
-            <input
-              id="phone-number"
-              type="tel"
-              name="number"
-              class="form-control"
-              placeholder="Enter Your Phone Number (optional)"
-            />
-          </div>
+      <!-- Email -->
+      <div class="mb-4 col-md-5 mx-auto">
+        <label class="mb-1"
+          >Email Address<span class="text-danger">*</span></label
+        >
+        <input
+          id="email"
+          type="email"
+          name="email"
+          class="form-control"
+          placeholder="Enter Email Address"
+        />
+      </div>
 
-          <!-- City -->
-          <div class="mb-4 col-md-5 mx-auto">
-            <label class="mb-1">City<span class="text-danger">*</span></label>
-            <input id="City type="text" name="city" class="form-control"
-            placeholder="Enter Your City" />
-          </div>
+      <!-- Password -->
+      <div class="mb-4 col-md-5 mx-auto">
+        <label class="mb-1">Password<span class="text-danger">*</span></label>
+        <input
+          id="password"
+          type="password"
+          name="password"
+          class="form-control"
+          placeholder="Enter Password"
+        />
+      </div>
 
-          <!-- Profile image URL -->
-          <div class="mb-4 col-md-5 mx-auto">
-            <label class="mb-1">Profile Image URL</label>
-            <input
-              id="profile-img-url"
-              type="url"
-              name="profile-url"
-              class="form-control"
-              placeholder="Enter Your Profile Image URL (optional)"
-            />
-          </div>
+            <!-- Confirm Password -->
+      <div class="mb-4 col-md-5 mx-auto">
+        <label class="mb-1">Password<span class="text-danger">*</span></label>
+        <input
+          id="confirm-password"
+          type="password"
+          name="password"
+          class="form-control"
+          placeholder="Enter Password"
+        />
+      </div>
 
-          <!-- Description -->
-          <div class="mb-4 col-md-11 mx-auto">
-            <label class="mb-1">Profile Description</label>
-            <input
-              id="user-about"
-              type="text"
-              name="description"
-              class="form-control"
-              placeholder="Enter Your Profile Description (optional)"
-            />
-          </div>
-        </div>
+      <!-- Phone number -->
+      <div class="mb-4 col-md-5 mx-auto">
+        <label class="mb-1">Phone Number</label>
+        <input
+          id="phone-number"
+          type="tel"
+          name="number"
+          class="form-control"
+          placeholder="Enter Your Phone Number (optional)"
+        />
+      </div>
 
-        <!-- Sign up button -->
-        <div class="text-center">
-          <button type="submit" class="btn btn-primary btn-lg mt-3">
-            Sign up
-          </button>
-        </div>
-      </form>
-    </main>
+      <!-- Location -->
+      <div class="mb-4 col-md-5 mx-auto">
+        <label class="mb-1">City<span class="text-danger">*</span></label>
+        <input id="location" type="text" name="city" class="form-control"
+        placeholder="Enter Your Home Address" />
+      </div>
+
+      <!-- Profile image URL -->
+      <div class="mb-4 col-md-5 mx-auto">
+        <label class="mb-1">Profile Image URL</label>
+        <input
+          id="profile-img-url"
+          type="url"
+          name="profile-url"
+          class="form-control"
+          placeholder="Enter Your Profile Image URL (optional)"
+        />
+      </div>
+
+      <!-- Description -->
+      <div class="mb-4 col-md-11 mx-auto">
+        <label class="mb-1">Profile Description</label>
+        <input
+          id="user-about"
+          type="text"
+          name="description"
+          class="form-control"
+          placeholder="Enter Your Profile Description (optional)"
+        />
+      </div>
+    </div>
+
+    <!-- Sign up button -->
+    <div class="text-center">
+      <button type="submit" class="btn btn-primary btn-lg mt-3">Sign up</button>
+    </div>
+    <div id="alert-message"></div>
+  </form>
+</main>

@@ -11,12 +11,21 @@ const postData = [
     food_type: "Grocery",
   },
   {
+    food_name: "Milk",
+    description: "This is a green 1 litre milk ",
+    food_url:
+      "https://jjproducts.global.ssl.fastly.net/jjfoodservice/image/upload/w_700,h_700,c_scale/v1601909473/products/DAI006/_S/mww2zj6cegiqyononnkg.jpg",
+    price: 2.0,
+    user_id: 2,
+    food_type: "Grocery",
+  },
+  {
     food_name: "White Bread",
     description: "This is a white bread that expires in 3 days",
     food_url:
       "https://images.unsplash.com/photo-1592029780368-c1fff15bcfd5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8d2hpdGUlMjBicmVhZHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
     price: 1.55,
-    user_id: 1,
+    user_id: 3,
     food_type: "Grocery",
     status: "Unavailable",
   },
@@ -35,7 +44,17 @@ const postData = [
     food_url:
       "https://images.unsplash.com/photo-1590080962330-747c6aba8028?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTZ8fGljZSUyMGNyZWFtfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
     price: 3.0,
-    user_id: 2,
+    user_id: 1,
+    food_type: "Dessert",
+    status: "Unavailable",
+  },
+  {
+    food_name: "ice-cream",
+    description: "chocolate ice cream cone with sprinkles",
+    food_url:
+      "https://images.unsplash.com/photo-1590080962330-747c6aba8028?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTZ8fGljZSUyMGNyZWFtfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
+    price: 3.0,
+    user_id: 4,
     food_type: "Dessert",
     status: "Unavailable",
   },
@@ -45,7 +64,7 @@ const postData = [
     food_url:
       "https://images.unsplash.com/photo-1590080962330-747c6aba8028?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTZ8fGljZSUyMGNyZWFtfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
     price: 3.0,
-    user_id: 2,
+    user_id: 4,
     food_type: "Dessert",
   },
   {
@@ -54,7 +73,7 @@ const postData = [
     food_url:
       "https://images.unsplash.com/photo-1606890737304-57a1ca8a5b62?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Y2hvY29sYXRlJTIwY2FrZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
     price: 12.0,
-    user_id: 2,
+    user_id: 3,
     food_type: "Dessert",
     status: "Unavailable",
   },
@@ -64,7 +83,7 @@ const postData = [
     food_url:
       "https://images.unsplash.com/photo-1603903631889-b5f3ba4d5b9b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Y2hpY2tlbiUyMHNhbmR3aWNofGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
     price: 4.0,
-    user_id: 2,
+    user_id: 1,
     food_type: "Meal",
   },
   {
@@ -83,7 +102,17 @@ const postData = [
     food_url:
       "https://images.unsplash.com/photo-1633945274405-b6c8069047b0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8YmlyeWFuaXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
     price: 14.0,
-    user_id: 2,
+    user_id: 3,
+    food_type: "Meal",
+  },
+  {
+    food_name: "Chicken Biryani",
+    description:
+      "a savory chicken and rice dish that includes layers of chicken, rice, and aromatics that are steamed together. The bottom layer of rice absorbs all the chicken juices as it cooks, giving it a tender texture and rich flavor, while the top layer of rice turns out white and fluffy.",
+    food_url:
+      "https://images.unsplash.com/photo-1633945274405-b6c8069047b0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8YmlyeWFuaXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
+    price: 14.0,
+    user_id: 1,
     food_type: "Meal",
   },
   {
@@ -92,7 +121,7 @@ const postData = [
     food_url:
       "https://media.istockphoto.com/photos/orange-juice-glass-jar-shot-on-rustic-wooden-table-picture-id915657126?b=1&k=20&m=915657126&s=170667a&w=0&h=N5gBvWtUcAIPCtPYmjs13jzb0qykCWeWvsQUFIMnSak=",
     price: 2.0,
-    user_id: 2,
+    user_id: 4,
     food_type: "Drink",
   },
 ];

@@ -47,19 +47,14 @@ const schema = {
   phone_num: {
     type: DataTypes.INTEGER,
     allowNull: true,
-    validate: {
-      isNumeric: true,
-    },
-  },
-
-  city: {
-    type: DataTypes.STRING,
-    allowNull: true,
-    defaultValue: "birmingham",
+    // validate: {
+    //   isNumeric: true,
+    // },
   },
 
   location: {
     type: DataTypes.STRING,
+    defaultValue: "Birmingham Airport, Airport Way, Birmingham B26 3QJ",
     allowNull: true,
   },
 
@@ -72,6 +67,8 @@ const schema = {
 
   description: {
     type: DataTypes.STRING,
+    defaultValue:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     allowNull: true,
   },
 };
