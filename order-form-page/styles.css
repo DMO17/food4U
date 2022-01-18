@@ -20,7 +20,7 @@ main {
 
 .food-image {
   object-fit: fill;
-  max-width: 100px;
+  max-width: 125px;
   margin-right: 20px;
   border-radius: 15px;
 }
