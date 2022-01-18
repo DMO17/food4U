@@ -5,6 +5,7 @@ const connection = require("../config/connection");
 const schema = {
   id: {
     type: DataTypes.INTEGER,
+    primaryKey: true,
     allowNull: false,
     primaryKey: true,
     autoIncrement: true,
@@ -13,7 +14,7 @@ const schema = {
     type: UUID,
     defaultValue: UUIDV4,
     allowNull: false,
-    primaryKey: true,
+    // primaryKey: true,
   },
   food_name: {
     type: DataTypes.STRING,
