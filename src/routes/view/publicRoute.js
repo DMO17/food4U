@@ -7,8 +7,8 @@ const {
 
 const router = Router();
 
-router.get("/login", renderLoginPage);
-router.get("/sign-up", renderSignUpPage);
-router.get("/", renderHomePage);
+router.use("/login", renderLoginPage);
+router.use("/sign-up", renderSignUpPage);
+router.use("/home", renderHomePage);
 
 module.exports = router;
