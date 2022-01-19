@@ -114,7 +114,7 @@ const updateFoodPostById = async (req, res) => {
       });
     }
 
-    return res.json({ data });
+    return res.json({ success: true, data: data });
   } catch (error) {
     console.log(`[ERROR]: ${errorMessage} | ${error.message}`);
     return res.status(500).json({

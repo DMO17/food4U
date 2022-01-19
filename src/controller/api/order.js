@@ -31,8 +31,6 @@ const orderFoodPostById = async (req, res) => {
       message: errorMessage,
     });
   }
-
-  res.json({ message: "order food post by id" });
 };
 
 const updateOrderFoodPostById = (req, res) => {

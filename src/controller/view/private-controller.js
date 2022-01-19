@@ -58,6 +58,31 @@ const renderFoodPostById = async (req, res) => {
   }
 };
 
+const renderEditFoodPostById = async (req, res) => {
+  try {
+    const { loggedIn } = req.session;
+
+    const { postId } = req.params;
+
+    const foodPostData = await Post.findOne({
+      where: { uuid: postId },
+      raw: true,
+    });
+
+    // if (!foodPostData) {
+    //   return res.render("no-blog");
+    // }
+
+    console.log(foodPostData);
+
+    const data = { loggedIn, ...foodPostData };
+
+    res.render("edit-post", data);
+  } catch (error) {
+    console.log(error.message);
+  }
+};
+
 const renderFoodPostForm = (req, res) => {
   res.render("create-food-post");
 };
@@ -217,6 +242,7 @@ module.exports = {
   renderDashboard,
   renderFoodPostById,
   renderFoodPostForm,
+  renderEditFoodPostById,
   renderOrderForm,
   renderProfilePage,
   renderProfileOrders,

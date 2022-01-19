@@ -3,6 +3,7 @@ const signupForm = $("#signup-form");
 const loginForm = $("#login-form");
 const logoutBtn = $("#logout");
 const foodPostForm = $("#food-post-form");
+const editFoodPostForm = $(".food-post-edit");
 
 const handleSignupFormSubmission = async (event) => {
   event.preventDefault();
@@ -187,7 +188,71 @@ const handleFoodPostSubmission = async (event) => {
   }
 };
 
+const handleEditFoodPostSubmission = async (event) => {
+  event.preventDefault();
+
+  // window.location.pathname.split('/')[3]
+
+  const { id } = event.target;
+
+  console.log(id);
+
+  const food_name = $("#food-title").val();
+  // const food_url = $("#food-image-url").val() || $("#food-image").val() ,
+  const food_url = $("#food-image-url").val();
+  const description = $("#food-description").val();
+  const price = $("#food-price").val();
+  const location = $("#food-address").val();
+  const food_type = $("#food-type").val();
+  const status = $("#food-item").val();
+
+  console.log(food_type, status);
+
+  if (food_name && food_url && description && price && food_type) {
+    const response = await fetch(`api/food-post/${id}`, {
+      method: "PUT",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        food_name,
+        food_url,
+        description,
+        price,
+        location,
+        food_type,
+        status,
+      }),
+      redirect: "follow",
+    });
+
+    const data = await response.json();
+
+    console.log(`this is the data`, data);
+
+    if (data.success) {
+      window.location.replace("/dashboard");
+    } else {
+      const warning = `<div class="alert alert-success" role="alert">
+      Please fill in the required fields correctly
+      </div>`;
+
+      $("#alert-message").empty();
+      return $("#alert-message").append(warning);
+    }
+  } else {
+    const warning = `<div class="alert alert-success" role="alert">
+    Please fill in the required fields
+    </div>`;
+
+    $("#alert-message").empty();
+    return $("#alert-message").append(warning);
+  }
+};
+
 signupForm.on("submit", handleSignupFormSubmission);
 loginForm.on("submit", handleLoginFormSubmission);
 foodPostForm.on("submit", handleFoodPostSubmission);
+editFoodPostForm.on("submit", handleEditFoodPostSubmission);
 logoutBtn.on("click", handleLogout);
