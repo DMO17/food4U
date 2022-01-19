@@ -96,26 +96,43 @@ const handleLoginFormSubmission = async (event) => {
 
   const email = $("#email").val();
   const password = $("#password").val();
+  const alertMessage = $("#alert-message");
 
   console.log(email, password);
 
-  const response = await fetch("/auth/login", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      email,
-      password,
-    }),
-  });
+  if (email && password) {
+    const response = await fetch("/auth/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        email,
+        password,
+      }),
+    });
 
-  const data = await response.json();
+    const data = await response.json();
 
-  console.log(data);
+    console.log(data);
 
-  if (data.success) {
-    window.location.replace("/dashboard");
+    if (data.success) {
+      window.location.replace("/dashboard");
+    } else {
+      const warning = `<div class="alert alert-warning" role="alert">
+   Incorrect Email or Password 
+   </div>`;
+      alertMessage.empty();
+
+      return alertMessage.append(warning);
+    }
+  } else {
+    const warning = `<div class="alert alert-warning" role="alert">
+  Please fill in the fields to log in
+ </div>`;
+    alertMessage.empty();
+
+    return alertMessage.append(warning);
   }
 };
 
