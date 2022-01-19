@@ -7,7 +7,7 @@ const SequelizeStore = require("connect-session-sequelize")(session.Store);
 
 const connection = require("./config/connection");
 const routes = require("./routes");
-
+const helpers = require("./helper/handlerbars");
 // setting up server
 
 const PORT = process.env.PORT || 4000;
@@ -27,7 +27,7 @@ const sessionOptions = {
 };
 
 //handlebars
-const hbs = expressHandlebars.create({});
+const hbs = expressHandlebars.create({ helpers });
 app.engine("handlebars", hbs.engine);
 app.set("view engine", "handlebars");
 

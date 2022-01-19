@@ -60,6 +60,8 @@ const createFoodPost = async (req, res) => {
 const updateFoodPostById = async (req, res) => {
   const errorMessage = "Failed to update food post";
   try {
+    console.log("payload body", req.body);
+
     const { uuid } = req.params;
 
     const validPostBodyFields = getPayloadWithValidFieldsOnly(
@@ -114,7 +116,7 @@ const updateFoodPostById = async (req, res) => {
       });
     }
 
-    return res.json({ data });
+    return res.json({ success: true, data: data });
   } catch (error) {
     console.log(`[ERROR]: ${errorMessage} | ${error.message}`);
     return res.status(500).json({

@@ -3,6 +3,7 @@ const signupForm = $("#signup-form");
 const loginForm = $("#login-form");
 const logoutBtn = $("#logout");
 const foodPostForm = $("#food-post-form");
+const editFoodPostForm = $(".food-post-edit");
 
 const handleSignupFormSubmission = async (event) => {
   event.preventDefault();
@@ -70,21 +71,21 @@ const handleSignupFormSubmission = async (event) => {
   </div>`;
 
     alertMessage.empty();
-    return alertMessage.append(warning);
+    alertMessage.append(warning);
   } else if (password === confirmPassword && password.length < 8) {
     const warning = `<div class="alert alert-success" role="alert">
      Your password must be have over 8 characters
     </div>`;
     alertMessage.empty();
-    return alertMessage.append(warning);
-  } else if (password != confirmPassword && password.length < 8) {
+    alertMessage.append(warning);
+  } else if (password != confirmPassword && password.length > 8) {
     const warning = `<div class="alert alert-success" role="alert">
     Your confirm password does'nt match
   </div>`;
 
     alertMessage.empty();
 
-    return alertMessage.append(warning);
+    alertMessage.append(warning);
   }
 };
 
@@ -95,26 +96,43 @@ const handleLoginFormSubmission = async (event) => {
 
   const email = $("#email").val();
   const password = $("#password").val();
+  const alertMessage = $("#alert-message");
 
   console.log(email, password);
 
-  const response = await fetch("/auth/login", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      email,
-      password,
-    }),
-  });
+  if (email && password) {
+    const response = await fetch("/auth/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        email,
+        password,
+      }),
+    });
 
-  const data = await response.json();
+    const data = await response.json();
 
-  console.log(data);
+    console.log(data);
 
-  if (data.success) {
-    window.location.replace("/dashboard");
+    if (data.success) {
+      window.location.replace("/dashboard");
+    } else {
+      const warning = `<div class="alert alert-warning" role="alert">
+   Incorrect Email or Password 
+   </div>`;
+      alertMessage.empty();
+
+      return alertMessage.append(warning);
+    }
+  } else {
+    const warning = `<div class="alert alert-warning" role="alert">
+  Please fill in the fields to log in
+ </div>`;
+    alertMessage.empty();
+
+    return alertMessage.append(warning);
   }
 };
 
@@ -187,7 +205,66 @@ const handleFoodPostSubmission = async (event) => {
   }
 };
 
+const handleEditFoodPostSubmission = async (event) => {
+  event.preventDefault();
+
+  // window.location.pathname.split('/')[3]
+
+  const { id } = event.target;
+
+  const food_name = $("#food-title").val();
+  const food_url = $("#food-image-url").val();
+  const description = $("#food-description").val();
+  const price = Number($("#food-price").val());
+  const location = $("#food-address").val();
+  const food_type = $("#food-type").val();
+  const status = $("#food-item").val();
+
+  if (food_name && food_url && description && price && food_type) {
+    const response = await fetch(`/api/food-post/${id}`, {
+      method: "PUT",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        food_name,
+        food_url,
+        description,
+        price,
+        location,
+        food_type,
+        status,
+      }),
+      // redirect: "follow",
+    });
+
+    const data = await response.json();
+
+    console.log(`this is the data`, data);
+
+    if (data.success) {
+      window.location.replace("/dashboard");
+    } else {
+      const warning = `<div class="alert alert-success" role="alert">
+      Please fill in the required fields correctly
+      </div>`;
+
+      $("#alert-message").empty();
+      return $("#alert-message").append(warning);
+    }
+  } else {
+    const warning = `<div class="alert alert-success" role="alert">
+    Please fill in the required fields
+    </div>`;
+
+    $("#alert-message").empty();
+    return $("#alert-message").append(warning);
+  }
+};
+
 signupForm.on("submit", handleSignupFormSubmission);
 loginForm.on("submit", handleLoginFormSubmission);
 foodPostForm.on("submit", handleFoodPostSubmission);
+editFoodPostForm.on("submit", handleEditFoodPostSubmission);
 logoutBtn.on("click", handleLogout);
