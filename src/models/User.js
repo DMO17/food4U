@@ -45,7 +45,7 @@ const schema = {
   },
 
   phone_num: {
-    type: DataTypes.INTEGER,
+    type: DataTypes.STRING,
     allowNull: true,
     // validate: {
     //   isNumeric: true,

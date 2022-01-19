@@ -71,21 +71,21 @@ const handleSignupFormSubmission = async (event) => {
   </div>`;
 
     alertMessage.empty();
-    return alertMessage.append(warning);
+    alertMessage.append(warning);
   } else if (password === confirmPassword && password.length < 8) {
     const warning = `<div class="alert alert-success" role="alert">
      Your password must be have over 8 characters
     </div>`;
     alertMessage.empty();
-    return alertMessage.append(warning);
-  } else if (password != confirmPassword && password.length < 8) {
+    alertMessage.append(warning);
+  } else if (password != confirmPassword && password.length > 8) {
     const warning = `<div class="alert alert-success" role="alert">
     Your confirm password does'nt match
   </div>`;
 
     alertMessage.empty();
 
-    return alertMessage.append(warning);
+    alertMessage.append(warning);
   }
 };
 
