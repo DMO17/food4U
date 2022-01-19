@@ -1,3 +1,75 @@
-
 {{>private-navbar}}
-<h1>order food post form</h1>
+<main class="shadow rounded overflow-hidden container mt-5 col-md-7">
+      <!-- Order form -->
+      <form>
+        <!-- Form title -->
+        <h1 class="card-title mt-3 mb-4 text-center">Your Order</h1>
+
+        <hr>
+
+        <!-- Summary -->
+        <div class="box d-flex flex-wrap flex-row justify-content-between">
+          
+        <div class="summary mb-5"> 
+          <h2 class="card-title mt-3 mb-4">Summary</h1>
+
+          <!-- Food 1 -->
+          <div class="food">
+            <!-- Food image thumbnail -->
+            <img src="./assets/images/food.jpg" class="food-image">
+
+            <!-- Food details -->
+            <div class="food-details">
+              <!-- Title -->
+              <h4>Food title</h3>
+                <!-- Price -->
+                <p>Price: £2.00</p>
+                <!-- Seller -->
+                <p id="food-seller"><i class="fas fa-user icon"></i>Seller username</p>
+                <!-- Location -->
+              <p id="food-location"><i class="fas fa-map-marker-alt icon"></i>Food address here</p>
+            </div>
+            
+          </div>
+          
+        </div>
+
+        <div class="buyer-summary">
+          <h2 class="card-title mt-3 mb-4">Your details</h1>
+           <!-- User -->
+           <div class="buyer">
+            <!-- User image thumbnail -->
+            <img src="{{userInfo.profileImage}}" class="buyer-image mb-3">
+
+            <!-- Buyer details -->
+            <div class="buyer-details">
+              <!-- Name -->
+              <h4>{{userInfo.name}}</h4>
+              <!-- Username -->
+              <p id="food-seller"><i class="fas fa-user
+                icon"></i>{{userInfo.username}}</p>
+                <!-- Email-->
+                <p id="food-seller"><i class="fas fa-envelope
+                   icon"></i>{{userInfo.email}}</p>
+
+                   <p id="food-seller"><i class="fas fa-map-marker-alt
+                    icon"></i>{{userInfo.location}}</p>
+            </div>
+            
+          </div>
+
+        </div>
+
+      </div>
+
+        <div class="notes mb-4">
+          <h3 class="mb-3">Notes</h3>
+          <textarea rows="2" cols="50" placeholder="Add any notes for the seller here."></textarea>
+        </div>
+
+        <!-- Place order button -->
+          <button type="submit" class="btn btn-primary btn-lg mt-3 mb-4" id="order">
+            Place Order
+          </button>
+      </form>
+    </main>

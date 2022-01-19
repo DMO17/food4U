@@ -62,8 +62,49 @@ const renderFoodPostForm = (req, res) => {
   res.render("create-food-post");
 };
 
-const renderOrderForm = (req, res) => {
-  res.render("order-form");
+const renderOrderForm = async (req, res) => {
+  try {
+    const { loggedIn } = req.session;
+    const { postId } = req.params;
+
+    const postData = await Post.findAll({
+      where: { uuid: postId },
+      include: [{ model: User }],
+      // raw: true,
+    });
+
+    const serializePostData = postData.map((posts) =>
+      posts.get({ plain: true })
+    )[0];
+
+    const data = await Order.findAll({
+      where: { post_id: serializePostData.id },
+      include: [{ model: Post }],
+      // raw: true,
+    });
+
+    const serializedData = {
+      loggedIn,
+      order: data.map((orders) => orders.get({ plain: true }))[0],
+      userInfo: {
+        name: req.session.user.full_name,
+        email: req.session.user.email,
+        username: req.session.user.username,
+        location: req.session.user.location,
+        profileImage: req.session.user.profileImg,
+      },
+    };
+
+    console.log("Serialized data:", serializedData);
+    res.render("order-form", serializedData);
+  } catch (error) {
+    const errorMessage = "Failed to render profile data";
+    console.log(`[ERROR]: ${errorMessage} | ${error.message}`);
+    // return res.status(500).json({
+    //   success: false,
+    //   message: errorMessage,
+    // });
+  }
 };
 
 const renderProfilePage = async (req, res) => {
