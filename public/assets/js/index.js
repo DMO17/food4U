@@ -195,21 +195,16 @@ const handleEditFoodPostSubmission = async (event) => {
 
   const { id } = event.target;
 
-  console.log(id);
-
   const food_name = $("#food-title").val();
-  // const food_url = $("#food-image-url").val() || $("#food-image").val() ,
   const food_url = $("#food-image-url").val();
   const description = $("#food-description").val();
-  const price = $("#food-price").val();
+  const price = Number($("#food-price").val());
   const location = $("#food-address").val();
   const food_type = $("#food-type").val();
   const status = $("#food-item").val();
 
-  console.log(food_type, status);
-
   if (food_name && food_url && description && price && food_type) {
-    const response = await fetch(`api/food-post/${id}`, {
+    const response = await fetch(`/api/food-post/${id}`, {
       method: "PUT",
       headers: {
         Accept: "application/json",
@@ -224,7 +219,7 @@ const handleEditFoodPostSubmission = async (event) => {
         food_type,
         status,
       }),
-      redirect: "follow",
+      // redirect: "follow",
     });
 
     const data = await response.json();

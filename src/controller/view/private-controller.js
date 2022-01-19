@@ -153,8 +153,6 @@ const renderProfilePage = async (req, res) => {
 
     // console.log(serializedData);
 
-    console.log(req.session.user.profileImg);
-
     res.render("profile-page", serializedData);
   } catch (error) {
     const errorMessage = "Failed to render profile data";
@@ -186,8 +184,6 @@ const renderProfilePosts = async (req, res) => {
     };
 
     // console.log(serializedData);
-
-    console.log(req.session.user.profileImg);
 
     res.render("profile-posts", serializedData);
   } catch (error) {
