@@ -13,7 +13,7 @@ const renderDashboard = async (req, res) => {
       posts: data.map((posts) => posts.get({ plain: true })),
     };
 
-    console.log(serializedData);
+    // console.log(serializedData);
 
     res.render("dashboard", serializedData);
   } catch (error) {
