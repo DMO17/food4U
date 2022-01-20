@@ -233,8 +233,37 @@ const renderProfileOrders = async (req, res) => {
   }
 };
 
-const renderWatchList = (req, res) => {
-  res.render("watch-list");
+const renderUserProfilePage = async (req, res) => {
+  try {
+    // const { username } = req.params;
+
+    // console.log(username);
+
+    // const userData = await User.findAll({
+    //   where: { username: username },
+    // });
+
+    // const postIdData = userData.map((posts) => posts.get({ plain: true }))[0];
+
+    // const data = await Post.findAll({
+    //   where: { user_id: postIdData.id },
+    //   include: [{ model: User }],
+    // });
+
+    // const serializedData = {
+    //   posts: data.map((posts) => posts.get({ plain: true })),
+    //   postIdData,
+    // };
+
+    res.render("user-profile");
+  } catch (error) {
+    const errorMessage = "Failed to render profile data";
+    console.log(`[ERROR]: ${errorMessage} | ${error.message}`);
+    // return res.status(500).json({
+    //   success: false,
+    //   message: errorMessage,
+    // });
+  }
 };
 
 const renderInbox = (req, res) => {
@@ -293,7 +322,7 @@ module.exports = {
   renderProfilePage,
   renderProfileOrders,
   renderProfilePosts,
-  renderWatchList,
+  renderUserProfilePage,
   renderInbox,
 };
 
