@@ -13,7 +13,7 @@ const renderDashboard = async (req, res) => {
       posts: data.map((posts) => posts.get({ plain: true })),
     };
 
-    console.log(serializedData);
+    // console.log(serializedData);
 
     res.render("dashboard", serializedData);
   } catch (error) {
@@ -102,15 +102,15 @@ const renderOrderForm = async (req, res) => {
       posts.get({ plain: true })
     )[0];
 
-    const data = await Order.findAll({
-      where: { post_id: serializePostData.id },
-      include: [{ model: Post }],
-      // raw: true,
-    });
+    // const data = await Order.findAll({
+    //   where: { post_id: serializePostData.id },
+    //   include: [{ model: Post }],
+    //   // raw: true,
+    // });
 
     const serializedData = {
       loggedIn,
-      order: data.map((orders) => orders.get({ plain: true }))[0],
+      serializePostData,
       userInfo: {
         name: req.session.user.full_name,
         email: req.session.user.email,
@@ -141,9 +141,16 @@ const renderProfilePage = async (req, res) => {
       // raw: true,
     });
 
+    const orderData = await Order.findAll({
+      where: { user_id: req.session.user.id },
+      include: [{ model: Post }],
+      // raw: true,
+    });
+
     const serializedData = {
       loggedIn,
       posts: data.map((posts) => posts.get({ plain: true })),
+      order: orderData.map((orders) => orders.get({ plain: true })),
       userInfo: {
         name: req.session.user.full_name,
         location: req.session.user.location,
@@ -226,11 +233,83 @@ const renderProfileOrders = async (req, res) => {
   }
 };
 
-const renderWatchList = (req, res) => {
-  res.render("watch-list");
+const renderUserProfilePage = async (req, res) => {
+  try {
+    // const { username } = req.params;
+
+    // console.log(username);
+
+    // const userData = await User.findAll({
+    //   where: { username: username },
+    // });
+
+    // const postIdData = userData.map((posts) => posts.get({ plain: true }))[0];
+
+    // const data = await Post.findAll({
+    //   where: { user_id: postIdData.id },
+    //   include: [{ model: User }],
+    // });
+
+    // const serializedData = {
+    //   posts: data.map((posts) => posts.get({ plain: true })),
+    //   postIdData,
+    // };
+
+    res.render("user-profile");
+  } catch (error) {
+    const errorMessage = "Failed to render profile data";
+    console.log(`[ERROR]: ${errorMessage} | ${error.message}`);
+    // return res.status(500).json({
+    //   success: false,
+    //   message: errorMessage,
+    // });
+  }
 };
 
 const renderInbox = (req, res) => {
+  // try {
+  //   const { loggedIn } = req.session;
+  //   const { postId } = req.params;
+
+  //   const postData = await Post.findAll({
+  //     where: { uuid: postId },
+  //     include: [{ model: User }],
+  //     // raw: true,
+  //   });
+
+  //   const serializePostData = postData.map((posts) =>
+  //     posts.get({ plain: true })
+  //   )[0];
+
+  //   const data = await Order.findAll({
+  //     where: { post_id: serializePostData.id },
+  //     include: [{ model: Post }],
+  //     // raw: true,
+  //   });
+
+  //   const serializedData = {
+  //     loggedIn,
+  //     order: data.map((orders) => orders.get({ plain: true }))[0],
+  //     userInfo: {
+  //       name: req.session.user.full_name,
+  //       email: req.session.user.email,
+  //       username: req.session.user.username,
+  //       location: req.session.user.location,
+  //       profileImage: req.session.user.profileImg,
+  //     },
+  //   };
+
+  //   console.log("Serialized data:", serializedData);
+  //   res.render("inbox", serializedData);
+  // } catch (error) {
+  //   const errorMessage = "Failed to render profile data";
+  //   console.log(`[ERROR]: ${errorMessage} | ${error.message}`);
+  //   // return res.status(500).json({
+  //   //   success: false,
+  //   //   message: errorMessage,
+  //   // });
+  // }
+
   res.render("inbox");
 };
 
@@ -243,6 +322,51 @@ module.exports = {
   renderProfilePage,
   renderProfileOrders,
   renderProfilePosts,
-  renderWatchList,
+  renderUserProfilePage,
   renderInbox,
 };
+
+// const renderOrderForm = async (req, res) => {
+//   try {
+//     const { loggedIn } = req.session;
+//     const { postId } = req.params;
+
+//     const postData = await Post.findAll({
+//       where: { uuid: postId },
+//       include: [{ model: User }],
+//       // raw: true,
+//     });
+
+//     const serializePostData = postData.map((posts) =>
+//       posts.get({ plain: true })
+//     )[0];
+
+//     const data = await Order.findAll({
+//       where: { post_id: serializePostData.id },
+//       include: [{ model: Post }],
+//       // raw: true,
+//     });
+
+//     const serializedData = {
+//       loggedIn,
+//       order: data.map((orders) => orders.get({ plain: true }))[0],
+//       userInfo: {
+//         name: req.session.user.full_name,
+//         email: req.session.user.email,
+//         username: req.session.user.username,
+//         location: req.session.user.location,
+//         profileImage: req.session.user.profileImg,
+//       },
+//     };
+
+//     console.log("Serialized data:", serializedData);
+//     res.render("order-form", serializedData);
+//   } catch (error) {
+//     const errorMessage = "Failed to render profile data";
+//     console.log(`[ERROR]: ${errorMessage} | ${error.message}`);
+//     // return res.status(500).json({
+//     //   success: false,
+//     //   message: errorMessage,
+//     // });
+//   }
+// };

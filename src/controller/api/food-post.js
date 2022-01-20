@@ -143,7 +143,7 @@ const deleteFoodPostById = async (req, res) => {
       });
     }
 
-    return res.json({ data: "food post successfully deleted" });
+    return res.json({ success: true, data: "food post successfully deleted" });
   } catch (error) {
     console.log(`[ERROR]: ${errorMessage} | ${error.message}`);
     return res.status(500).json({
