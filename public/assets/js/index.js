@@ -4,6 +4,7 @@ const loginForm = $("#login-form");
 const logoutBtn = $("#logout");
 const foodPostForm = $("#food-post-form");
 const editFoodPostForm = $(".food-post-edit");
+const orderForm = $(".order-form");
 
 const handleSignupFormSubmission = async (event) => {
   event.preventDefault();
@@ -263,8 +264,40 @@ const handleEditFoodPostSubmission = async (event) => {
   }
 };
 
+const handleOrderSubmission = async (event) => {
+  event.preventDefault();
+  const { id } = event.target;
+  const message = $("#order-message").val();
+  const post_id = id;
+
+  if (message) {
+    const response = await fetch(`/api/food-post/${id}/order`, {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ message, post_id }),
+    });
+
+    const data = await response.json();
+
+    if (data.success) {
+      window.location.replace("/profile/orders");
+    }
+  } else {
+    const warning = `<div class="alert alert-success" role="alert">
+    Please fill in the required fields
+    </div>`;
+
+    $("#alert-message").empty();
+    return $("#alert-message").append(warning);
+  }
+};
+
 signupForm.on("submit", handleSignupFormSubmission);
 loginForm.on("submit", handleLoginFormSubmission);
 foodPostForm.on("submit", handleFoodPostSubmission);
 editFoodPostForm.on("submit", handleEditFoodPostSubmission);
+orderForm.on("submit", handleOrderSubmission);
 logoutBtn.on("click", handleLogout);

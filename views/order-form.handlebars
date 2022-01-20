@@ -1,11 +1,13 @@
 {{>private-navbar}}
 <main class="shadow rounded overflow-hidden container mt-5 col-md-7">
       <!-- Order form -->
-      <form>
+      <form class="order-form" id="{{serializePostData.id}}">
         <!-- Form title -->
         <h1 class="card-title mt-3 mb-4 text-center">Your Order</h1>
 
         <hr>
+
+     <div id="alert-message"></div>
 
         <!-- Summary -->
         <div class="box d-flex flex-wrap flex-row justify-content-between">
@@ -16,18 +18,18 @@
           <!-- Food 1 -->
           <div class="food">
             <!-- Food image thumbnail -->
-            <img src="./assets/images/food.jpg" class="food-image">
+            <img src="{{serializePostData.food_url}}" class="food-image">
 
             <!-- Food details -->
             <div class="food-details">
               <!-- Title -->
-              <h4>Food title</h3>
+              <h4>{{serializePostData.food_name}} ({{serializePostData.food_type}})</h3>
                 <!-- Price -->
                 <p>Price: £2.00</p>
                 <!-- Seller -->
-                <p id="food-seller"><i class="fas fa-user icon"></i>Seller username</p>
+                <p id="food-seller"><i class="fas fa-user icon"></i>{{serializePostData.User.username}}</p>
                 <!-- Location -->
-              <p id="food-location"><i class="fas fa-map-marker-alt icon"></i>Food address here</p>
+              <p id="food-location"><i class="fas fa-map-marker-alt icon"></i>{{serializePostData.location}}</p>
             </div>
             
           </div>
@@ -64,7 +66,7 @@
 
         <div class="notes mb-4">
           <h3 class="mb-3">Notes</h3>
-          <textarea rows="2" cols="50" placeholder="Add any notes for the seller here."></textarea>
+          <textarea rows="2" cols="50" id="order-message"  placeholder="Add any notes for the seller here."></textarea>
         </div>
 
         <!-- Place order button -->
