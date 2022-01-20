@@ -164,6 +164,7 @@ const handleFoodPostSubmission = async (event) => {
   const price = $("#food-price").val();
   const location = $("#food-address").val();
   const food_type = $("#food-type").val();
+  const status = $("#food-status").val();
 
   console.log(food_name, food_url, description, price, location, food_type);
 
@@ -181,6 +182,7 @@ const handleFoodPostSubmission = async (event) => {
         price,
         location,
         food_type,
+        status,
       }),
       redirect: "follow",
     });
@@ -299,20 +301,23 @@ const handleOrderSubmission = async (event) => {
 const handleDeletePost = async (event) => {
   event.preventDefault();
   const { id } = event.target;
+  const confirmMessage = confirm("Are you sure you want to delete this post");
 
-  const response = await fetch(`/api/food-post/${id}`, {
-    method: "DELETE",
-    headers: {
-      Accept: "application/json",
-      "Content-Type": "application/json",
-    },
-  });
+  if (confirmMessage) {
+    const response = await fetch(`/api/food-post/${id}`, {
+      method: "DELETE",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+    });
 
-  const data = await response.json();
+    const data = await response.json();
 
-  if (data.success) {
-    window.location.replace("/profile/posts");
-  }
+    if (data.success) {
+      window.location.replace("/profile/posts");
+    }
+  } else return;
 };
 
 signupForm.on("submit", handleSignupFormSubmission);
