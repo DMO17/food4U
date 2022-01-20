@@ -235,15 +235,21 @@ const renderProfileOrders = async (req, res) => {
 
 const renderUserProfilePage = async (req, res) => {
   try {
-    // const { username } = req.params;
+    const { username } = req.params;
 
-    // console.log(username);
+    console.log(username);
 
-    // const userData = await User.findAll({
-    //   where: { username: username },
-    // });
+    const userData = await User.findOne({
+      where: { username: username },
+      include: [{ model: Post }],
+      // raw: true,
+    });
 
-    // const postIdData = userData.map((posts) => posts.get({ plain: true }))[0];
+    const postInfo = userData.get({ plain: true });
+
+    console.log(postInfo);
+
+    // console.log(userData, username, `all data`);
 
     // const data = await Post.findAll({
     //   where: { user_id: postIdData.id },
@@ -255,7 +261,7 @@ const renderUserProfilePage = async (req, res) => {
     //   postIdData,
     // };
 
-    res.render("user-profile");
+    res.render("user-profile", { postInfo });
   } catch (error) {
     const errorMessage = "Failed to render profile data";
     console.log(`[ERROR]: ${errorMessage} | ${error.message}`);

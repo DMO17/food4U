@@ -14,19 +14,19 @@ const {
 
 const router = Router();
 
-router.use("/dashboard", renderDashboard);
+router.get("/dashboard", renderDashboard);
 
-router.use("/food-post/view/:postId", renderFoodPostById);
-router.use("/food-post/edit/:postId", renderEditFoodPostById);
+router.get("/food-post/view/:postId", renderFoodPostById);
+router.get("/food-post/edit/:postId", renderEditFoodPostById);
 
-router.use("/food-post/create", renderFoodPostForm);
-router.use("/food-post/:postId/order", renderOrderForm);
+router.get("/food-post/create", renderFoodPostForm);
+router.get("/food-post/:postId/order", renderOrderForm);
 
-router.use("/profile/view/:username", renderUserProfilePage);
-router.use("/profile/posts", renderProfilePosts);
-router.use("/profile/orders", renderProfileOrders);
-router.use("/profile", renderProfilePage);
+router.get("/profile/posts", renderProfilePosts);
+router.get("/profile/orders", renderProfileOrders);
+router.get("/profile/view/:username", renderUserProfilePage);
+router.get("/profile", renderProfilePage);
 
-router.use("/inbox", renderInbox);
+router.get("/inbox", renderInbox);
 
 module.exports = router;

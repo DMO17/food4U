@@ -13,7 +13,7 @@
   <div class="card-text">
     <h2 class="mb-0">
       {{food_name}}
-      {{!-- {{checkStatus status}} --}}
+      {{{checkStatus status}}}
 
       {{!-- {{#if checkStatus status}}
         <i class="fas fa-check-circle"></i>
@@ -23,7 +23,9 @@
 
     </h2>
 
-    <a href="" class="username"><i class="fas fa-user"></i>
+    <a href="/profile/view/{{User.username}}" class="username"><i
+        class="fas fa-user"
+      ></i>
       {{User.username}}</a>
 
     <div class="location-point">

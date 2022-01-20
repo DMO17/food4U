@@ -5,7 +5,8 @@ module.exports = {
     return moment(date).format("DD/MM/YYYY");
   },
   checkStatus: (status) => {
-    if ((status = "Available")) {
+    console.log(`check status!!!!!`, status);
+    if (status === "Available") {
       return '<i class="fas fa-check-circle"></i>';
     } else return '<i class="fas fa-times"></i>';
   },

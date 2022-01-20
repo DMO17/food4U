@@ -6,16 +6,16 @@
       <div class="media align-items-end profile-head">
         <div class="profile mr-3">
           <img
-            src={{postIdData.profileUrl}}
+            src= "{{postInfo.profile_url}}"
             alt="..."
             width="170"
             class="rounded mb-2 img-thumbnail"
           />
         </div>
         <div class="media-body mb-5 text-white">
-          <h4 class="mt-0 mb-0">{{postIdData.first_name}} {{postIdData.last_name}}</h4>
+          <h4 class="mt-0 mb-0">{{postInfo.first_name}} {{postInfo.last_name}}</h4>
           <p class="small mb-4">
-            <i class="fas fa-map-marker-alt mr-2"></i>{{postIdData.location}}
+            <i class="fas fa-map-marker-alt mr-2"></i>{{postInfo.location}}
           </p>
         </div>
       </div>
@@ -33,7 +33,7 @@
       <h3 class="mb-2">About</h3>
       <div class="p-4 rounded shadow-sm bg-light">
         <p class="font-italic mb-0">
-         {{postIdData.description}}
+         {{postInfo.description}}
         </p>
       </div>
     </div>
@@ -42,9 +42,5 @@
       <div class="mx-4 my-3">
         <h3 class="mb-2">Posts</h3>
       </div>
-
- 
-
-
 
 </main>
