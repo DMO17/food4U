@@ -37,12 +37,12 @@ body {
   font-weight: 700;
 }
 
-.button {
+.order-button-container .button {
   display: flex;
   justify-content: center;
 }
 
-.btn {
+.order-button-container .btn {
   color: white;
   background-color: 4d908e;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
