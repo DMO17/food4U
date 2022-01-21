@@ -54,15 +54,15 @@ main {
 
 .card-text p {
   color: rgb(37, 32, 32);
-  font-size: 14px;
+  /* font-size: 14px; */
   font-weight: 300;
-  padding: 0;
+  padding: 0 !important;
   margin: 3px;
   overflow: hidden;
   text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: 3; /* number of lines to show */
-  line-clamp: 3;
+  /* display: -webkit-box; */
+  /* -webkit-line-clamp: 3; number of lines to show */
+  /* line-clamp: 3; */
   -webkit-box-orient: vertical;
 }
 
@@ -227,10 +227,6 @@ main {
 
 h4 {
   margin-bottom: 15px;
-}
-
-p {
-  line-height: 5px;
 }
 
 .icon {
