@@ -4,3 +4,760 @@
   {{> public-navbar}}
   {{/if}}
 <h1>HOME</h1>
+    <!-- Header - set the background image for the header in the line below-->
+    <header
+      class="py-5 bg-image-full"
+      style="background-image: url('./assets/background-food.jpeg')"
+    >
+      <div class="text-center my-5">
+        <img
+          class="img-fluid rounded-circle mb-4"
+          src="./assets/food-logo.png"
+          alt="..."
+        />
+        <h1 class="text-white fs-3 fw-bolder">Food4U</h1>
+        <!--Search Bar-->
+        <div class="mb-2 row height d-flex justify-content-center align-items-center">
+          <div class="col-md-8">
+              <div class="search"> <i class="fa fa-search"></i> <input type="text" class="form-control" placeholder="What are you looking for today?">  </div>
+          </div>
+         
+      </div>
+
+      <button class="btn btn-primary">Search</button>
+        <!--Search Bar end-->
+      </div>
+    </header>
+
+    <!--Carousel-->
+
+    <section class="carousel" aria-label="Gallery">
+      <ol class="carousel__viewport">
+        <li id="carousel__slide1" tabindex="0" class="carousel__slide">
+          <!--Card 1-->
+          <div class="cards-container">
+            <div
+              class="rounded shadow-sm d-flex flex-wrap flex-row justify-content-center"
+            >
+              <div class="card">
+                <div
+                  style="
+                background: url({{food_url}});
+                grid-area: image;
+                border-top-left-radius: 15px;
+                border-top-right-radius: 15px;
+                background-position: center;
+                background-size: cover;
+              "
+                  class="card-image"
+                ></div>
+                <div class="card-text">
+                  <h2 class="mb-0">
+                    {{food_name}}
+                    <i class="fas fa-check-circle"></i>
+                    <i class="fas fa-times"></i>
+                  </h2>
+
+                  <a href="" class="username"
+                    ><i class="fas fa-user"></i> {{User.username}}</a
+                  >
+
+                  <div class="location-point">
+                    Location <i class="fas fa-map-marker-alt"></i> {{location}}
+                  </div>
+                  <div class="food-post-date">
+                    <i class="far fa-clock"></i>11/01/2022
+                  </div>
+                  <div class="food-type">{{food_type}}</div>
+                </div>
+
+                <div class="card-stats">
+                  <div class="stat-btn">
+                    <div class="type">
+                      <a class="link" href="/food-post/view/{{uuid}}">VIEW</a>
+                    </div>
+                  </div>
+                  <div class="stat-btn-1">
+                    <div class="type">
+                      <a class="link" href="/food-post/{{uuid}}/order">ORDER</a>
+                    </div>
+                  </div>
+                  <div class="stat-btn-2">
+                    <div class="type">Watch-list</div>
+                  </div>
+                </div>
+
+                <div class="food-price">$56.99</div>
+              </div>
+            </div>
+
+            <div
+              class="d-none d-md-block rounded shadow-sm d-flex flex-wrap flex-row justify-content-center"
+            >
+              <div class="card">
+                <div
+                  style="
+            background: url({{food_url}});
+            grid-area: image;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+            background-position: center;
+            background-size: cover;
+          "
+                  class="card-image"
+                ></div>
+                <div class="card-text">
+                  <h2 class="mb-0">
+                    {{food_name}}
+                    <i class="fas fa-check-circle"></i>
+                    <i class="fas fa-times"></i>
+                  </h2>
+
+                  <a href="" class="username"
+                    ><i class="fas fa-user"></i> {{User.username}}</a
+                  >
+
+                  <div class="location-point">
+                    Location <i class="fas fa-map-marker-alt"></i> {{location}}
+                  </div>
+                  <div class="food-post-date">
+                    <i class="far fa-clock"></i>11/01/2022
+                  </div>
+                  <div class="food-type">{{food_type}}</div>
+                </div>
+
+                <div class="card-stats">
+                  <div class="stat-btn">
+                    <div class="type">
+                      <a class="link" href="/food-post/view/{{uuid}}">VIEW</a>
+                    </div>
+                  </div>
+                  <div class="stat-btn-1">
+                    <div class="type">
+                      <a class="link" href="/food-post/{{uuid}}/order">ORDER</a>
+                    </div>
+                  </div>
+                  <div class="stat-btn-2">
+                    <div class="type">Watch-list</div>
+                  </div>
+                </div>
+
+                <div class="food-price">$56.99</div>
+              </div>
+            </div>
+
+            <div
+              class="d-none d-md-block rounded shadow-sm d-flex flex-wrap flex-row justify-content-center">
+              <div class="card">
+                <div
+                  style="
+            background: url({{food_url}});
+            grid-area: image;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+            background-position: center;
+            background-size: cover;
+          "
+                  class="card-image"
+                ></div>
+                <div class="card-text">
+                  <h2 class="mb-0">
+                    {{food_name}}
+                    <i class="fas fa-check-circle"></i>
+                    <i class="fas fa-times"></i>
+                  </h2>
+
+                  <a href="" class="username"
+                    ><i class="fas fa-user"></i> {{User.username}}</a
+                  >
+
+                  <div class="location-point">
+                    Location <i class="fas fa-map-marker-alt"></i> {{location}}
+                  </div>
+                  <div class="food-post-date">
+                    <i class="far fa-clock"></i>11/01/2022
+                  </div>
+                  <div class="food-type">{{food_type}}</div>
+                </div>
+
+                <div class="card-stats">
+                  <div class="stat-btn">
+                    <div class="type">
+                      <a class="link" href="/food-post/view/{{uuid}}">VIEW</a>
+                    </div>
+                  </div>
+                  <div class="stat-btn-1">
+                    <div class="type">
+                      <a class="link" href="/food-post/{{uuid}}/order">ORDER</a>
+                    </div>
+                  </div>
+                  <div class="stat-btn-2">
+                    <div class="type">Watch-list</div>
+                  </div>
+                </div>
+
+                <div class="food-price">$56.99</div>
+              </div>
+            </div>
+          </div>
+
+          <!--Card 1 end-->
+          <div class="carousel__snapper">
+            <a href="#carousel__slide4" class="carousel__prev"
+              >/a
+            >
+            <a href="#carousel__slide2" class="carousel__next"
+              ></a
+            >
+          </div>
+        </li>
+        <li id="carousel__slide2" tabindex="0" class="carousel__slide">
+          <!--Card 2-->
+          <div class="cards-container">
+            <div
+              class="rounded shadow-sm d-flex flex-wrap flex-row justify-content-center"
+            >
+              <div class="card">
+                <div
+                  style="
+                background: url({{food_url}});
+                grid-area: image;
+                border-top-left-radius: 15px;
+                border-top-right-radius: 15px;
+                background-position: center;
+                background-size: cover;
+              "
+                  class="card-image"
+                ></div>
+                <div class="card-text">
+                  <h2 class="mb-0">
+                    {{food_name}}
+                    <i class="fas fa-check-circle"></i>
+                    <i class="fas fa-times"></i>
+                  </h2>
+
+                  <a href="" class="username"
+                    ><i class="fas fa-user"></i> {{User.username}}</a
+                  >
+
+                  <div class="location-point">
+                    Location <i class="fas fa-map-marker-alt"></i> {{location}}
+                  </div>
+                  <div class="food-post-date">
+                    <i class="far fa-clock"></i>11/01/2022
+                  </div>
+                  <div class="food-type">{{food_type}}</div>
+                </div>
+
+                <div class="card-stats">
+                  <div class="stat-btn">
+                    <div class="type">
+                      <a class="link" href="/food-post/view/{{uuid}}">VIEW</a>
+                    </div>
+                  </div>
+                  <div class="stat-btn-1">
+                    <div class="type">
+                      <a class="link" href="/food-post/{{uuid}}/order">ORDER</a>
+                    </div>
+                  </div>
+                  <div class="stat-btn-2">
+                    <div class="type">Watch-list</div>
+                  </div>
+                </div>
+
+                <div class="food-price">$56.99</div>
+              </div>
+            </div>
+
+            <div
+              class="d-none d-md-block rounded shadow-sm d-flex flex-wrap flex-row justify-content-center"
+            >
+              <div class="card">
+                <div
+                  style="
+            background: url({{food_url}});
+            grid-area: image;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+            background-position: center;
+            background-size: cover;
+          "
+                  class="card-image"
+                ></div>
+                <div class="card-text">
+                  <h2 class="mb-0">
+                    {{food_name}}
+                    <i class="fas fa-check-circle"></i>
+                    <i class="fas fa-times"></i>
+                  </h2>
+
+                  <a href="" class="username"
+                    ><i class="fas fa-user"></i> {{User.username}}</a
+                  >
+
+                  <div class="location-point">
+                    Location <i class="fas fa-map-marker-alt"></i> {{location}}
+                  </div>
+                  <div class="food-post-date">
+                    <i class="far fa-clock"></i>11/01/2022
+                  </div>
+                  <div class="food-type">{{food_type}}</div>
+                </div>
+
+                <div class="card-stats">
+                  <div class="stat-btn">
+                    <div class="type">
+                      <a class="link" href="/food-post/view/{{uuid}}">VIEW</a>
+                    </div>
+                  </div>
+                  <div class="stat-btn-1">
+                    <div class="type">
+                      <a class="link" href="/food-post/{{uuid}}/order">ORDER</a>
+                    </div>
+                  </div>
+                  <div class="stat-btn-2">
+                    <div class="type">Watch-list</div>
+                  </div>
+                </div>
+
+                <div class="food-price">$56.99</div>
+              </div>
+            </div>
+
+            <div
+              class="d-none d-md-block rounded shadow-sm d-flex flex-wrap flex-row justify-content-center">
+              <div class="card">
+                <div
+                  style="
+            background: url({{food_url}});
+            grid-area: image;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+            background-position: center;
+            background-size: cover;
+          "
+                  class="card-image"
+                ></div>
+                <div class="card-text">
+                  <h2 class="mb-0">
+                    {{food_name}}
+                    <i class="fas fa-check-circle"></i>
+                    <i class="fas fa-times"></i>
+                  </h2>
+
+                  <a href="" class="username"
+                    ><i class="fas fa-user"></i> {{User.username}}</a
+                  >
+
+                  <div class="location-point">
+                    Location <i class="fas fa-map-marker-alt"></i> {{location}}
+                  </div>
+                  <div class="food-post-date">
+                    <i class="far fa-clock"></i>11/01/2022
+                  </div>
+                  <div class="food-type">{{food_type}}</div>
+                </div>
+
+                <div class="card-stats">
+                  <div class="stat-btn">
+                    <div class="type">
+                      <a class="link" href="/food-post/view/{{uuid}}">VIEW</a>
+                    </div>
+                  </div>
+                  <div class="stat-btn-1">
+                    <div class="type">
+                      <a class="link" href="/food-post/{{uuid}}/order">ORDER</a>
+                    </div>
+                  </div>
+                  <div class="stat-btn-2">
+                    <div class="type">Watch-list</div>
+                  </div>
+                </div>
+
+                <div class="food-price">$56.99</div>
+              </div>
+            </div>
+          </div>
+
+          <!--Card 2 end-->
+          <div class="carousel__snapper"></div>
+          <a href="#carousel__slide1" class="carousel__prev"
+            ></a
+          >
+          <a href="#carousel__slide3" class="carousel__next"
+            ></a
+          >
+        </li>
+        <li id="carousel__slide3" tabindex="0" class="carousel__slide">
+          <!--Card 3-->
+          <div class="cards-container">
+            <div
+              class="rounded shadow-sm d-flex flex-wrap flex-row justify-content-center"
+            >
+              <div class="card">
+                <div
+                  style="
+                background: url({{food_url}});
+                grid-area: image;
+                border-top-left-radius: 15px;
+                border-top-right-radius: 15px;
+                background-position: center;
+                background-size: cover;
+              "
+                  class="card-image"
+                ></div>
+                <div class="card-text">
+                  <h2 class="mb-0">
+                    {{food_name}}
+                    <i class="fas fa-check-circle"></i>
+                    <i class="fas fa-times"></i>
+                  </h2>
+
+                  <a href="" class="username"
+                    ><i class="fas fa-user"></i> {{User.username}}</a
+                  >
+
+                  <div class="location-point">
+                    Location <i class="fas fa-map-marker-alt"></i> {{location}}
+                  </div>
+                  <div class="food-post-date">
+                    <i class="far fa-clock"></i>11/01/2022
+                  </div>
+                  <div class="food-type">{{food_type}}</div>
+                </div>
+
+                <div class="card-stats">
+                  <div class="stat-btn">
+                    <div class="type">
+                      <a class="link" href="/food-post/view/{{uuid}}">VIEW</a>
+                    </div>
+                  </div>
+                  <div class="stat-btn-1">
+                    <div class="type">
+                      <a class="link" href="/food-post/{{uuid}}/order">ORDER</a>
+                    </div>
+                  </div>
+                  <div class="stat-btn-2">
+                    <div class="type">Watch-list</div>
+                  </div>
+                </div>
+
+                <div class="food-price">$56.99</div>
+              </div>
+            </div>
+
+            <div
+              class="d-none d-md-block rounded shadow-sm d-flex flex-wrap flex-row justify-content-center"
+            >
+              <div class="card">
+                <div
+                  style="
+            background: url({{food_url}});
+            grid-area: image;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+            background-position: center;
+            background-size: cover;
+          "
+                  class="card-image"
+                ></div>
+                <div class="card-text">
+                  <h2 class="mb-0">
+                    {{food_name}}
+                    <i class="fas fa-check-circle"></i>
+                    <i class="fas fa-times"></i>
+                  </h2>
+
+                  <a href="" class="username"
+                    ><i class="fas fa-user"></i> {{User.username}}</a
+                  >
+
+                  <div class="location-point">
+                    Location <i class="fas fa-map-marker-alt"></i> {{location}}
+                  </div>
+                  <div class="food-post-date">
+                    <i class="far fa-clock"></i>11/01/2022
+                  </div>
+                  <div class="food-type">{{food_type}}</div>
+                </div>
+
+                <div class="card-stats">
+                  <div class="stat-btn">
+                    <div class="type">
+                      <a class="link" href="/food-post/view/{{uuid}}">VIEW</a>
+                    </div>
+                  </div>
+                  <div class="stat-btn-1">
+                    <div class="type">
+                      <a class="link" href="/food-post/{{uuid}}/order">ORDER</a>
+                    </div>
+                  </div>
+                  <div class="stat-btn-2">
+                    <div class="type">Watch-list</div>
+                  </div>
+                </div>
+
+                <div class="food-price">$56.99</div>
+              </div>
+            </div>
+
+            <div
+              class="d-none d-md-block rounded shadow-sm d-flex flex-wrap flex-row justify-content-center">
+              <div class="card">
+                <div
+                  style="
+            background: url({{food_url}});
+            grid-area: image;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+            background-position: center;
+            background-size: cover;
+          "
+                  class="card-image"
+                ></div>
+                <div class="card-text">
+                  <h2 class="mb-0">
+                    {{food_name}}
+                    <i class="fas fa-check-circle"></i>
+                    <i class="fas fa-times"></i>
+                  </h2>
+
+                  <a href="" class="username"
+                    ><i class="fas fa-user"></i> {{User.username}}</a
+                  >
+
+                  <div class="location-point">
+                    Location <i class="fas fa-map-marker-alt"></i> {{location}}
+                  </div>
+                  <div class="food-post-date">
+                    <i class="far fa-clock"></i>11/01/2022
+                  </div>
+                  <div class="food-type">{{food_type}}</div>
+                </div>
+
+                <div class="card-stats">
+                  <div class="stat-btn">
+                    <div class="type">
+                      <a class="link" href="/food-post/view/{{uuid}}">VIEW</a>
+                    </div>
+                  </div>
+                  <div class="stat-btn-1">
+                    <div class="type">
+                      <a class="link" href="/food-post/{{uuid}}/order">ORDER</a>
+                    </div>
+                  </div>
+                  <div class="stat-btn-2">
+                    <div class="type">Watch-list</div>
+                  </div>
+                </div>
+
+                <div class="food-price">$56.99</div>
+              </div>
+            </div>
+          </div>
+
+          <!--Card 3 end-->
+          <div class="carousel__snapper"></div>
+          <a href="#carousel__slide2" class="carousel__prev"
+            ></a
+          >
+          <a href="#carousel__slide4" class="carousel__next"
+            ></a
+          >
+        </li>
+        <li id="carousel__slide4" tabindex="0" class="carousel__slide">
+          <!--Card 4-->
+          <div class="cards-container">
+            <div
+              class="rounded shadow-sm d-flex flex-wrap flex-row justify-content-center"
+            >
+              <div class="card">
+                <div
+                  style="
+                background: url({{food_url}});
+                grid-area: image;
+                border-top-left-radius: 15px;
+                border-top-right-radius: 15px;
+                background-position: center;
+                background-size: cover;
+              "
+                  class="card-image"
+                ></div>
+                <div class="card-text">
+                  <h2 class="mb-0">
+                    {{food_name}}
+                    <i class="fas fa-check-circle"></i>
+                    <i class="fas fa-times"></i>
+                  </h2>
+
+                  <a href="" class="username"
+                    ><i class="fas fa-user"></i> {{User.username}}</a
+                  >
+
+                  <div class="location-point">
+                    Location <i class="fas fa-map-marker-alt"></i> {{location}}
+                  </div>
+                  <div class="food-post-date">
+                    <i class="far fa-clock"></i>11/01/2022
+                  </div>
+                  <div class="food-type">{{food_type}}</div>
+                </div>
+
+                <div class="card-stats">
+                  <div class="stat-btn">
+                    <div class="type">
+                      <a class="link" href="/food-post/view/{{uuid}}">VIEW</a>
+                    </div>
+                  </div>
+                  <div class="stat-btn-1">
+                    <div class="type">
+                      <a class="link" href="/food-post/{{uuid}}/order">ORDER</a>
+                    </div>
+                  </div>
+                  <div class="stat-btn-2">
+                    <div class="type">Watch-list</div>
+                  </div>
+                </div>
+
+                <div class="food-price">$56.99</div>
+              </div>
+            </div>
+
+            <div
+              class="d-none d-md-block rounded shadow-sm d-flex flex-wrap flex-row justify-content-center"
+            >
+              <div class="card">
+                <div
+                  style="
+            background: url({{food_url}});
+            grid-area: image;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+            background-position: center;
+            background-size: cover;
+          "
+                  class="card-image"
+                ></div>
+                <div class="card-text">
+                  <h2 class="mb-0">
+                    {{food_name}}
+                    <i class="fas fa-check-circle"></i>
+                    <i class="fas fa-times"></i>
+                  </h2>
+
+                  <a href="" class="username"
+                    ><i class="fas fa-user"></i> {{User.username}}</a
+                  >
+
+                  <div class="location-point">
+                    Location <i class="fas fa-map-marker-alt"></i> {{location}}
+                  </div>
+                  <div class="food-post-date">
+                    <i class="far fa-clock"></i>11/01/2022
+                  </div>
+                  <div class="food-type">{{food_type}}</div>
+                </div>
+
+                <div class="card-stats">
+                  <div class="stat-btn">
+                    <div class="type">
+                      <a class="link" href="/food-post/view/{{uuid}}">VIEW</a>
+                    </div>
+                  </div>
+                  <div class="stat-btn-1">
+                    <div class="type">
+                      <a class="link" href="/food-post/{{uuid}}/order">ORDER</a>
+                    </div>
+                  </div>
+                  <div class="stat-btn-2">
+                    <div class="type">Watch-list</div>
+                  </div>
+                </div>
+
+                <div class="food-price">$56.99</div>
+              </div>
+            </div>
+
+            <div
+              class="d-none d-md-block rounded shadow-sm d-flex flex-wrap flex-row justify-content-center">
+              <div class="card">
+                <div
+                  style="
+            background: url({{food_url}});
+            grid-area: image;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+            background-position: center;
+            background-size: cover;
+          "
+                  class="card-image"
+                ></div>
+                <div class="card-text">
+                  <h2 class="mb-0">
+                    {{food_name}}
+                    <i class="fas fa-check-circle"></i>
+                    <i class="fas fa-times"></i>
+                  </h2>
+
+                  <a href="" class="username"
+                    ><i class="fas fa-user"></i> {{User.username}}</a
+                  >
+
+                  <div class="location-point">
+                    Location <i class="fas fa-map-marker-alt"></i> {{location}}
+                  </div>
+                  <div class="food-post-date">
+                    <i class="far fa-clock"></i>11/01/2022
+                  </div>
+                  <div class="food-type">{{food_type}}</div>
+                </div>
+
+                <div class="card-stats">
+                  <div class="stat-btn">
+                    <div class="type">
+                      <a class="link" href="/food-post/view/{{uuid}}">VIEW</a>
+                    </div>
+                  </div>
+                  <div class="stat-btn-1">
+                    <div class="type">
+                      <a class="link" href="/food-post/{{uuid}}/order">ORDER</a>
+                    </div>
+                  </div>
+                  <div class="stat-btn-2">
+                    <div class="type">Watch-list</div>
+                  </div>
+                </div>
+
+                <div class="food-price">$56.99</div>
+              </div>
+            </div>
+          </div>
+
+          <!--Card 4 end-->
+          <div class="carousel__snapper"></div>
+          <a href="#carousel__slide3" class="carousel__prev"
+            ></a
+          >
+          <a href="#carousel__slide1" class="carousel__next"
+            ></a
+          >
+        </li>
+      </ol>
+      <aside class="carousel__navigation">
+        <ol class="carousel__navigation-list">
+          <li class="carousel__navigation-item">
+            <a href="#carousel__slide1" class="carousel__navigation-button"></a>
+          </li>
+          <li class="carousel__navigation-item">
+            <a href="#carousel__slide2" class="carousel__navigation-button"></a>
+          </li>
+          <li class="carousel__navigation-item">
+            <a href="#carousel__slide3" class="carousel__navigation-button"></a>
+          </li>
+          <li class="carousel__navigation-item">
+            <a href="#carousel__slide4" class="carousel__navigation-button"></a>
+          </li>
+        </ol>
+      </aside>
+    </section>
+    <!--Carousel end-->
