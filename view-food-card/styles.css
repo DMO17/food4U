@@ -2,7 +2,7 @@ body {
   background-image: url(../public/assets/images/background-image.jpg);
 }
 
-.card-container {
+.card-container-1 {
   padding: 30px;
   display: flex;
   justify-content: center;
@@ -30,19 +30,19 @@ body {
   align-content: center;
 }
 
-.card-title {
+.card-title-design {
   display: flex;
   justify-content: center;
   padding-left: 200px;
   font-weight: 700;
 }
 
-.order-button-container .button {
+.order-button-styling {
   display: flex;
   justify-content: center;
 }
 
-.order-button-container .btn {
+.order-button-bg {
   color: white;
   background-color: 4d908e;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
