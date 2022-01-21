@@ -110,12 +110,15 @@ We used three different APIs to get the required data for this project
 
 ### User Flow
 
-- AS a user when I access the website
-- I
-- SO
-- IF
-- THEN
-- WHEN
+- AS a user when I access the website I can see a public page with information about the app
+- I can Login or Sign Up
+- IF I sign up I can create an user profile, with contact information and description
+- THEN I can create posts
+- THEN I can edit and delete posts
+- WHEN I am on the website as a buyer, I can see provider profile page
+- THEN I can see more information on posts by clicking on them
+- THEN I can add the item on my order and buy directly from the seller profile
+- THEN I can view order history
 
 ### Wireframes
 
@@ -125,7 +128,11 @@ We used three different APIs to get the required data for this project
 
 ## Plans For Improvement
 
--
+- Watchlist
+  Location using google maps API
+  Using a direct messaging platform to contact the provider
+  Commenting under food posts
+  Reviewing each provider
 
 ## Screenshots
 
