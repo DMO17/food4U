@@ -82,7 +82,7 @@ li {
   max-height: 50%;
   margin: auto;
   position: relative;
-  padding-top: 100%;
+  padding-top: 600px;
   filter: drop-shadow(0 0 10px #0003);
   perspective: 20px;
 }
