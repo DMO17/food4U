@@ -33,6 +33,24 @@ An application using the MVC paradigm, with its own server-side API, user authen
   - [Mobile user profile page](#desktop-selected-activity-search-results-page)
   - [Mobile view food card page](#desktop-selected-activity-search-results-page)
 
+GETTING STARTED
+INSTALLATION
+$ git clone git@github.com:DMO17/food4U.git
+$ cd food4U
+$ npm install
+START APPLICATION
+npm run dev
+SEED DATABASE
+npm run seed
+
+## Contributors
+
+Anab (https://github.com/anabwarsame)
+Andrada (https://github.com/andradag)
+Asmaa (https://github.com/AsmaaMusse)
+Dahir (https://github.com/DMO17)
+Harman (https://github.com/AkenEagle)
+
 ## User Story
 
 ```md
@@ -62,11 +80,25 @@ The URL of the GitHub repository is available [here](h).
 
 ## About The Project
 
-An app which allows users to randomly generate a list of activities given a random list of criteria, price, participants. The users will be presented with options and will be able to swipe left (delete) or swipe right (add to basket). API sourced from https://.
+Food4U is an application that provides food service for its clients and users. When a user logs in they are met by the dashboard which contains a random selection of food posts. The user can refine their search to their desired category out of groceries, dessert and meals.
 
-Once the user has done navigating their list of activities, they can review their activity bucket-list on the "my boredom list". They will be presented with cards displaying their choices. The uSearch tool bar will allow users to make simple web queries from inside the app to search for activities in their local area. API sourced from https://r/.
+As a user if i come across a post that i am interested in i can then proceed to view the food post in further detail and then place an order directly to the provider.
+
+If the user comes across a few food posts that they are interested in, then they can add this to their watch-list page, whereby they can narrow down their search and pick what they would like to order.
+
+For both the provider and user safety, in order for anyone to buy or sell their items they would have to create a profile where their details are verified. This allows the the user to be able to trace their goods back to the provider. This also gives the user a sense of security as they would feel more comfortable dealing with a verified page rather than an anonymous seller.
 
 ### Technologies Used
+
+HTML
+CSS
+JavaScript
+Node.js
+Express
+MYSQL
+Sequelize
+bcrypt
+Handlebars
 
 ### Web APIs
 
@@ -78,7 +110,7 @@ We used three different APIs to get the required data for this project
 
 ### User Flow
 
-- AS a user
+- AS a user when I access the website
 - I
 - SO
 - IF
