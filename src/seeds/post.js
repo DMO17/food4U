@@ -9,6 +9,7 @@ const postData = [
     price: 2.0,
     user_id: 1,
     food_type: "Grocery",
+    location: "389 Queen Street WOLVERHAMPTON WV62 4PO",
   },
   {
     food_name: "Milk",
@@ -18,6 +19,7 @@ const postData = [
     price: 2.0,
     user_id: 2,
     food_type: "Grocery",
+    location: "298 Brookvale Rd, Birmingham B23 7RT",
   },
   {
     food_name: "White Bread",
@@ -28,6 +30,7 @@ const postData = [
     user_id: 3,
     food_type: "Grocery",
     status: "Unavailable",
+    location: "9637 York Road DUMFRIES DG23 6NG",
   },
   {
     food_name: "Brown Bread",
@@ -37,6 +40,7 @@ const postData = [
     price: 1.75,
     user_id: 2,
     food_type: "Grocery",
+    location: "25 School Lane CREWE CW15 4ZN",
   },
   {
     food_name: "ice-cream",
@@ -47,6 +51,7 @@ const postData = [
     user_id: 1,
     food_type: "Dessert",
     status: "Unavailable",
+    location: "9327 George Street SWANSEA SA35 2HC",
   },
   {
     food_name: "ice-cream",
@@ -57,6 +62,7 @@ const postData = [
     user_id: 4,
     food_type: "Dessert",
     status: "Unavailable",
+    location: "80 Queen Street LANCASTER LA69 3KU",
   },
   {
     food_name: "ice-cream",
@@ -66,6 +72,7 @@ const postData = [
     price: 3.0,
     user_id: 4,
     food_type: "Dessert",
+    location: "84 Park Lane LLANDUDNO LL49 4EH",
   },
   {
     food_name: "Cake",
@@ -76,6 +83,7 @@ const postData = [
     user_id: 3,
     food_type: "Dessert",
     status: "Unavailable",
+    location: "84 Park Lane LLANDUDNO LL49 4EH",
   },
   {
     food_name: "Chicken sandwich",
@@ -85,6 +93,7 @@ const postData = [
     price: 4.0,
     user_id: 1,
     food_type: "Meal",
+    location: "80 Queen Street LANCASTER LA69 3KU",
   },
   {
     food_name: "Beef Burger",
@@ -94,6 +103,7 @@ const postData = [
     price: 4.0,
     user_id: 2,
     food_type: "Meal",
+    location: "92 Park Lane BLACKBURN BB67 3CQ",
   },
   {
     food_name: "Chicken Biryani",
@@ -104,6 +114,7 @@ const postData = [
     price: 14.0,
     user_id: 3,
     food_type: "Meal",
+    location: "389 Queen Street WOLVERHAMPTON WV62 4PO",
   },
   {
     food_name: "Chicken Biryani",
@@ -114,6 +125,7 @@ const postData = [
     price: 14.0,
     user_id: 1,
     food_type: "Meal",
+    location: "4 Richmond Road SOUTHAMPTON SO41 6CI",
   },
   {
     food_name: "Orange juice",
@@ -123,6 +135,7 @@ const postData = [
     price: 2.0,
     user_id: 4,
     food_type: "Drink",
+    location: "389 Queen Street WOLVERHAMPTON WV62 4PO",
   },
 ];
 
