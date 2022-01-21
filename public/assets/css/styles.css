@@ -31,11 +31,18 @@ main {
   text-align: center;
 }
 
+.card-container-1 .card {
+  text-align: left;
+}
+
 .card-text {
   grid-area: text;
   background-color: whitesmoke;
   margin: 20px;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+.card-container-1 .card-text {
+  background-color: transparent;
 }
 
 .card-text .username {
@@ -47,15 +54,15 @@ main {
 
 .card-text p {
   color: rgb(37, 32, 32);
-  font-size: 14px;
+  /* font-size: 14px; */
   font-weight: 300;
-  padding: 0;
+  padding: 0 !important;
   margin: 3px;
   overflow: hidden;
   text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: 3; /* number of lines to show */
-  line-clamp: 3;
+  /* display: -webkit-box; */
+  /* -webkit-line-clamp: 3; number of lines to show */
+  /* line-clamp: 3; */
   -webkit-box-orient: vertical;
 }
 
@@ -222,10 +229,6 @@ h4 {
   margin-bottom: 15px;
 }
 
-p {
-  line-height: 5px;
-}
-
 .icon {
   margin-right: 7px;
 }
@@ -245,14 +248,32 @@ textarea {
 
 /* view pages */
 
-.card-container {
+body {
+  background-image: url(../public/assets/images/background-image.jpg);
+}
+
+.card-container-1 {
   padding: 30px;
   display: flex;
   justify-content: center;
 }
 
+.card-container-1 b {
+  font-size: 1.25rem;
+}
+
 .column-1 {
   margin-right: 10px;
+}
+
+.profile-head {
+  transform: translateY(4rem);
+}
+
+.cover {
+  background-image: url(https://images.unsplash.com/photo-1530305408560-82d13781b33a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1352&q=80);
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .column-2 {
@@ -263,19 +284,17 @@ textarea {
   align-content: center;
 }
 
-.card-title {
-  display: flex;
-  justify-content: center;
-  padding-left: 200px;
+.card-title-design {
+  text-align: center;
   font-weight: 700;
 }
 
-.order-button-container .button {
+.order-button-styling {
   display: flex;
   justify-content: center;
 }
 
-.order-button-container .btn {
+.order-button-bg {
   color: white;
   background-color: 4d908e;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
@@ -289,4 +308,15 @@ textarea {
   padding-left: 50px;
   padding-right: 50px;
   border-radius: 10px;
+}
+
+.link {
+  text-decoration: none;
+  color: white;
+}
+
+.link:active,
+.link:visited,
+.link:focus {
+  color: white;
 }
