@@ -13,8 +13,7 @@
   <div class="card-text">
     <h2 class="mb-0">
       {{food_name}}
-      <i class="fas fa-check-circle"></i>
-      <i class="fas fa-times"></i>
+      {{{checkStatus status}}}
     </h2>
 
     <a href="" class="username"><i class="fas fa-user"></i>
@@ -33,13 +32,17 @@
 
   <div class="card-stats">
     <div class="stat-btn">
-      <div class="link"><a href="/food-post/view/{{uuid}}">VIEW</a></div>
+      <div class="type">
+        <a class="link" href="/food-post/view/{{uuid}}">VIEW</a>
+      </div>
     </div>
     <div class="stat-btn-1">
-      <div class="link"><a href="/food-post/edit/{{uuid}}">EDIT</a></div>
+      <div class="type">
+        <a class="link" href="/food-post/{{uuid}}/order">ORDER</a>
+      </div>
     </div>
     <div class="stat-btn-2">
-      <div class="type delete-post" id="{{uuid}}">DELETE</div>
+      <div class="type">Watch-list</div>
     </div>
   </div>
 
