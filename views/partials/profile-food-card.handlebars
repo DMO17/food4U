@@ -25,7 +25,7 @@
       {{location}}
     </div>
     <div class="food-post-date">
-      <i class="far fa-clock"></i>11/01/2022
+      <i class="far fa-clock"></i>{{dateFormatter createdAt}}
     </div>
     <div class="food-type">{{food_type}}</div>
   </div>
@@ -38,11 +38,11 @@
     </div>
     <div class="stat-btn-1">
       <div class="type">
-        <a class="link" href="/food-post/{{uuid}}/order">ORDER</a>
+        <a class="link" href="/food-post/edit/{{uuid}}">EDIT</a>
       </div>
     </div>
     <div class="stat-btn-2">
-      <div class="type">Watch-list</div>
+      <div class="type delete-post" id="{{uuid}}">DELETE</div>
     </div>
   </div>
 
