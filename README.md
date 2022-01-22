@@ -19,22 +19,16 @@ An application using the MVC paradigm, with its own server-side API, user authen
 - [Deployed URL](#deployed-url)
 - [Plans For Improvement](#plans-for-improvement)
 - [Screenshots](#screenshots)
-  - [Desktop index page with cards](#desktop-index-page-with-modal)
-  - [Desktop index page with food post form](#desktop-index-page-with-categories)
-  - [Desktop page with home page](#desktop-index-page-with-randomly-generated-activity-card)
-  - [Desktop page with login-page](#desktop-my-activties-page)
-  - [Desktop oder form page](#desktop-selected-activity-search-results-page)
-  - [Desktop sign-up page](#desktop-selected-activity-search-results-page)
-  - [Desktop user profile page](#desktop-selected-activity-search-results-page)
-  - [Desktop view food card page](#desktop-selected-activity-search-results-page)
-  - [Mobile index page with cards](#mobile-index-page-with-modal)
-  - [Mobile index page with food post form](#mobile-index-page-with-categories)
-  - [Mobile page with home page](#mobile-index-page-with-randomly-generated-activity-card)
-  - [Mobile page with login-page](#mobile-my-activties-page)
-  - [Mobile oder form page](#desktop-selected-activity-search-results-page)
-  - [Mobile sign-up page](#desktop-selected-activity-search-results-page)
-  - [Mobile user profile page](#desktop-selected-activity-search-results-page)
-  - [Mobile view food card page](#desktop-selected-activity-search-results-page)
+  - [Desktop Home Page](#desktop-home-page)
+  - [Desktop Dashboard](#desktop-dashboard)
+  - [Desktop My Posts](#desktop-my-posts)
+  - [Desktop My Profile](#desktop-my-profile)
+  - [Desktop Order Food](#desktop-order-food)
+  - [Desktop Order History](#desktop-order-history)
+  - [Desktop Post New Food](#desktop-post-new-food)
+  - [Desktop View Post](#desktop-view-post)
+  - [Mobile Login](#mobile-login)
+  - [Mobile Home Page](#mobile-home=page)
 
 ## Getting Started
 
@@ -115,8 +109,9 @@ The URL of the GitHub repository is available [here](https://github.com/andradag
 
 ## Screenshots
 
-- Desktop index page w
-  <img src="./assets/images/screenshots/Bored As Book! _.png">
+- Desktop Home Page
+
+  <img src="./readMe-screenshots/home-page.png>
 
 - Desktop Dashboard
 
@@ -150,6 +145,6 @@ The URL of the GitHub repository is available [here](https://github.com/andradag
 
   <img src="./readMe-screenshots/Mobile Login.png>
 
-- Mobile
+- Mobile Home Page
 
-  <img src="./readMe-screenshots/Mobile Home Page.png>
+  <img src="./readMe-screenshots/mobile-home-page.png>
