@@ -1,6 +1,6 @@
 # food4U - Full-stack web application
 
-<img src="./home-page/assets/food-logo.png"/>
+<img src="./public/assets/images/food-logo.png"/>
 
 An application using the MVC paradigm, with its own server-side API, user authentification, and which connects to a databse.
 
@@ -111,40 +111,40 @@ The URL of the GitHub repository is available [here](https://github.com/andradag
 
 - Desktop Home Page
 
-  <img src="./readMe-screenshots/home-page.png>
+  <img src="./readMe-screenshots/home-page.png"/>
 
 - Desktop Dashboard
 
-  <img src="./readMe-screenshots/dashboard.png>
+  <img src="./readMe-screenshots/dashboard.png"/>
 
 - Desktop My Posts
 
-  <img src="./readMe-screenshots/my-posts.png">
+  <img src="./readMe-screenshots/my-posts.png"/>
 
 - Desktop My Profile
 
-  <img src="./readMe-screenshots/my-profile.png>
+  <img src="./readMe-screenshots/my-profile.png"/>
 
 - Desktop Order Food
 
-  <img src="./readMe-screenshots/Order Food.png>
+  <img src="./readMe-screenshots/Order Food.png"/>
 
 - Desktop Order History
 
-  <img src="./readMe-screenshots/Order History.png">
+  <img src="./readMe-screenshots/Order History.png"/>
 
 - Desktop Post New Food
 
-  <img src="./readMe-screenshots/Post New Food.png">
+  <img src="./readMe-screenshots/Post New Food.png"/>
 
 - Desktop View Post
 
-  <img src="./readMe-screenshots/View Post.png">
+  <img src="./readMe-screenshots/View Post.png"/>
 
 - Mobile Login
 
-  <img src="./readMe-screenshots/Mobile Login.png>
+  <img src="./readMe-screenshots/Mobile Login.png"/>
 
 - Mobile Home Page
 
-  <img src="./readMe-screenshots/mobile-home-page.png>
+  <img src="./readMe-screenshots/mobile-home-page.png"/>
