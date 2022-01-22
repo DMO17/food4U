@@ -1,19 +1,22 @@
 # food4U - Full-stack web application
 
-<img src=./home-page/assets/food-logo.png/>
+<img src="./home-page/assets/food-logo.png"/>
 
 An application using the MVC paradigm, with its own server-side API, user authentification, and which connects to a databse.
 
 ## Table Of Contents
 
-- [Project Link](#project-link)
 - [Getting Started](#getting-started)
+  - [Instalation](#instalation)
+  - [Start Application](#start-application)
 - [Contributors](#contributors)
 - [About The Project](#about-the-project)
   - [Technologies Used](#technologies-used)
+    - [Back-end](#back-end)
+    - [Front-end](#front-end)
   - [Web APIs](#web-apis)
-  - [User Flow](#user-flows)
-  - [Wireframes](#wireframes)
+- [User Flow](#user-flows)
+- [Deployed URL](#deployed-url)
 - [Plans For Improvement](#plans-for-improvement)
 - [Screenshots](#screenshots)
   - [Desktop index page with cards](#desktop-index-page-with-modal)
@@ -33,50 +36,27 @@ An application using the MVC paradigm, with its own server-side API, user authen
   - [Mobile user profile page](#desktop-selected-activity-search-results-page)
   - [Mobile view food card page](#desktop-selected-activity-search-results-page)
 
-GETTING STARTED
-INSTALLATION
-$ git clone git@github.com:DMO17/food4U.git
-$ cd food4U
-$ npm install
-START APPLICATION
-npm run dev
-SEED DATABASE
-npm run seed
+## Getting Started
+
+### Instalation
+
+- $ git clone git@github.com:DMO17/food4U.git
+- $ cd food4U
+- $ npm install
+
+### Start Application
+
+- npm run dev
+- seed database
+- npm run seed
 
 ## Contributors
 
-Anab (https://github.com/anabwarsame)
-Andrada (https://github.com/andradag)
-Asmaa (https://github.com/AsmaaMusse)
-Dahir (https://github.com/DMO17)
-Harman (https://github.com/AkenEagle)
-
-## User Story
-
-```md
-AS A developer
-I WANT a README generator
-SO THAT I can quickly create a professional README for a new project
-```
-
-```md
-GIVEN a command-line application that accepts user input
-WHEN
-```
-
-## Video
-
-A walkthrough video demonstrating the functionality of the application is available [here](h)
-
-## README.md sample
-
-A sample README.md file for a project repository generated using the application is available [here](g)
-
-## Deployed URL
-
-The URL of the GitHub repository is available [here](h).
-
-<div style="text-align:center"><a href="https://github.com/conorjkelly96/bored-as-book/"><img src="./assets/images/book logo.jpg"></a></div>
+- [Anab](https://github.com/anabwarsame)
+- [Andrada](https://github.com/andradag)
+- [Asmaa](https://github.com/AsmaaMusse)
+- [Dahir](https://github.com/DMO17)
+- [Harman](https://github.com/AkenEagle)
 
 ## About The Project
 
@@ -90,25 +70,24 @@ For both the provider and user safety, in order for anyone to buy or sell their 
 
 ### Technologies Used
 
-HTML
-CSS
-JavaScript
-Node.js
-Express
-MYSQL
-Sequelize
-bcrypt
-Handlebars
+#### Back-end
+
+- Node.js
+- Express.js
+- MySql
+
+#### Front-end
+
+- CSS
+- JavaScript
+- J-Query
+- Handlebars
 
 ### Web APIs
 
-We used three different APIs to get the required data for this project
+The application is using its own server-side API.
 
-- [B](h)
-- [](h)
-- [](h)
-
-### User Flow
+## User Flow
 
 - AS a user when I access the website I can see a public page with information about the app
 - I can Login or Sign Up
@@ -120,39 +99,57 @@ We used three different APIs to get the required data for this project
 - THEN I can add the item on my order and buy directly from the seller profile
 - THEN I can view order history
 
-### Wireframes
+## Deployed URL
 
-<img src="./assets/images/aboutus.html.png">
-<img src="assets/images/index.html.boredasbook.png">
-<img src="assets/images/myactivities.html.png">
+The URL of the Heroku Application is available [here](https://food-4u.herokuapp.com/login)
+
+The URL of the GitHub repository is available [here](https://andradag.github.io/food4U/).
 
 ## Plans For Improvement
 
 - Watchlist
-  Location using google maps API
-  Using a direct messaging platform to contact the provider
-  Commenting under food posts
-  Reviewing each provider
+- Location using google maps API
+- Using a direct messaging platform to contact the provider
+- Commenting under food posts
+- Reviewing each provider
 
 ## Screenshots
 
 - Desktop index page w
   <img src="./assets/images/screenshots/Bored As Book! _.png">
-- Desktop index page
-  <img src="./assets/images/screenshots/Bored As Book! _ (1).png">
-- Desktop index page activity card
-  <img src="assets/images/screenshots/Bored As Book! _ (2).png">
-- Desktop
-  <img src="assets/images/screenshots/My Activities.png">
-- Desktop
-  <img src="assets/images/screenshots/My Activities (1).png">
-- Mobile index page
-  <img src="assets/images/screenshots/Bored As Book! _ (5).png">
-- Mobile index page w
-  <img src="assets/images/screenshots/Bored As Book! _ (3).png">
-- Mobile index page with
-  <img src="assets/images/screenshots/Bored As Book! _ (6).png">
+
+- Desktop Dashboard
+
+  <img src="./readMe-screenshots/dashboard.png>
+
+- Desktop My Posts
+
+  <img src="./readMe-screenshots/my-posts.png">
+
+- Desktop My Profile
+
+  <img src="./readMe-screenshots/my-profile.png>
+
+- Desktop Order Food
+
+  <img src="./readMe-screenshots/Order Food.png>
+
+- Desktop Order History
+
+  <img src="./readMe-screenshots/Order History.png">
+
+- Desktop Post New Food
+
+  <img src="./readMe-screenshots/Post New Food.png">
+
+- Desktop View Post
+
+  <img src="./readMe-screenshots/View Post.png">
+
+- Mobile Login
+
+  <img src="./readMe-screenshots/Mobile Login.png>
+
 - Mobile
-  <img src="assets/images/screenshots/My Activities (2).png">
-- Mobile
-  <img src="assets/images/screenshots/My Activities (3).png">
+
+  <img src="./readMe-screenshots/Mobile Home Page.png>
