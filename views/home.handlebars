@@ -3,29 +3,18 @@
   {{else}}
   {{> public-navbar}}
   {{/if}}
-<h1>HOME</h1>
     <!-- Header - set the background image for the header in the line below-->
     <header
       class="py-5 bg-image-full"
-      style="background-image: url('./assets/background-food.jpeg')"
+      style="background-image: url('./assets/images/background-food.jpeg')"
     >
       <div class="text-center my-5">
         <img
           class="img-fluid rounded-circle mb-4"
-          src="./assets/food-logo.png"
+          src="./assets/images/food-logo.png"
           alt="..."
         />
         <h1 class="text-white fs-3 fw-bolder">Food4U</h1>
-        <!--Search Bar-->
-        <div class="mb-2 row height d-flex justify-content-center align-items-center">
-          <div class="col-md-8">
-              <div class="search"> <i class="fa fa-search"></i> <input type="text" class="form-control" placeholder="What are you looking for today?">  </div>
-          </div>
-         
-      </div>
-
-      <button class="btn btn-primary">Search</button>
-        <!--Search Bar end-->
       </div>
     </header>
 
@@ -42,7 +31,7 @@
               <div class="card">
                 <div
                   style="
-                background: url({{food_url}});
+                background: url(https://assets.publishing.service.gov.uk/government/uploads/system/uploads/image_data/file/108320/s300_pizza-slice.jpg);
                 grid-area: image;
                 border-top-left-radius: 15px;
                 border-top-right-radius: 15px;
@@ -53,33 +42,33 @@
                 ></div>
                 <div class="card-text">
                   <h2 class="mb-0">
-                    {{food_name}}
+                    Pizza Slice
                     <i class="fas fa-check-circle"></i>
                     <i class="fas fa-times"></i>
                   </h2>
 
                   <a href="" class="username"
-                    ><i class="fas fa-user"></i> {{User.username}}</a
+                    ><i class="fas fa-user"></i> harman</a
                   >
 
                   <div class="location-point">
-                    Location <i class="fas fa-map-marker-alt"></i> {{location}}
+                    Location <i class="fas fa-map-marker-alt"></i> Birmingham Airport
                   </div>
                   <div class="food-post-date">
                     <i class="far fa-clock"></i>11/01/2022
                   </div>
-                  <div class="food-type">{{food_type}}</div>
+                  <div class="food-type">Grocery</div>
                 </div>
 
                 <div class="card-stats">
                   <div class="stat-btn">
                     <div class="type">
-                      <a class="link" href="/food-post/view/{{uuid}}">VIEW</a>
+                      <a class="link" href="/food-post/view/1">VIEW</a>
                     </div>
                   </div>
                   <div class="stat-btn-1">
                     <div class="type">
-                      <a class="link" href="/food-post/{{uuid}}/order">ORDER</a>
+                      <a class="link" href="/food-post/1/order">ORDER</a>
                     </div>
                   </div>
                   <div class="stat-btn-2">
@@ -87,7 +76,7 @@
                   </div>
                 </div>
 
-                <div class="food-price">$56.99</div>
+                <div class="food-price">£3.00</div>
               </div>
             </div>
 
@@ -97,7 +86,7 @@
               <div class="card">
                 <div
                   style="
-            background: url({{food_url}});
+            background: url(https://images.immediate.co.uk/production/volatile/sites/30/2020/08/processed-food700-350-e6d0f0f.jpg?quality=90&webp=true&resize=375,341);
             grid-area: image;
             border-top-left-radius: 15px;
             border-top-right-radius: 15px;
@@ -108,22 +97,22 @@
                 ></div>
                 <div class="card-text">
                   <h2 class="mb-0">
-                    {{food_name}}
+                    Hotdog
                     <i class="fas fa-check-circle"></i>
                     <i class="fas fa-times"></i>
                   </h2>
 
                   <a href="" class="username"
-                    ><i class="fas fa-user"></i> {{User.username}}</a
+                    ><i class="fas fa-user"></i> dahir</a
                   >
 
                   <div class="location-point">
-                    Location <i class="fas fa-map-marker-alt"></i> {{location}}
+                    Location <i class="fas fa-map-marker-alt"></i> Wolverhampton WV2
                   </div>
                   <div class="food-post-date">
                     <i class="far fa-clock"></i>11/01/2022
                   </div>
-                  <div class="food-type">{{food_type}}</div>
+                  <div class="food-type">Meal</div>
                 </div>
 
                 <div class="card-stats">
@@ -142,7 +131,7 @@
                   </div>
                 </div>
 
-                <div class="food-price">$56.99</div>
+                <div class="food-price">$5.00</div>
               </div>
             </div>
 
@@ -151,7 +140,7 @@
               <div class="card">
                 <div
                   style="
-            background: url({{food_url}});
+            background: url(https://www.ingredion.com/content/dam/ingredion/usca-images/food/meat/cheeseburger-bread_720x560.jpg);
             grid-area: image;
             border-top-left-radius: 15px;
             border-top-right-radius: 15px;
@@ -162,22 +151,22 @@
                 ></div>
                 <div class="card-text">
                   <h2 class="mb-0">
-                    {{food_name}}
+                    Cheeseburger
                     <i class="fas fa-check-circle"></i>
                     <i class="fas fa-times"></i>
                   </h2>
 
                   <a href="" class="username"
-                    ><i class="fas fa-user"></i> {{User.username}}</a
+                    ><i class="fas fa-user"></i> andrada</a
                   >
 
                   <div class="location-point">
-                    Location <i class="fas fa-map-marker-alt"></i> {{location}}
+                    Location <i class="fas fa-map-marker-alt"></i> West Bromwich
                   </div>
                   <div class="food-post-date">
                     <i class="far fa-clock"></i>11/01/2022
                   </div>
-                  <div class="food-type">{{food_type}}</div>
+                  <div class="food-type">Meal</div>
                 </div>
 
                 <div class="card-stats">
@@ -196,7 +185,7 @@
                   </div>
                 </div>
 
-                <div class="food-price">$56.99</div>
+                <div class="food-price">$4.00</div>
               </div>
             </div>
           </div>
@@ -220,7 +209,7 @@
               <div class="card">
                 <div
                   style="
-                background: url({{food_url}});
+                background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8yMIHkxs901EzRfpvMq6gIEfDADZcfbJxLw&usqp=CAU);
                 grid-area: image;
                 border-top-left-radius: 15px;
                 border-top-right-radius: 15px;
@@ -231,22 +220,22 @@
                 ></div>
                 <div class="card-text">
                   <h2 class="mb-0">
-                    {{food_name}}
+                    Gym Meal
                     <i class="fas fa-check-circle"></i>
                     <i class="fas fa-times"></i>
                   </h2>
 
                   <a href="" class="username"
-                    ><i class="fas fa-user"></i> {{User.username}}</a
+                    ><i class="fas fa-user"></i> harman</a
                   >
 
                   <div class="location-point">
-                    Location <i class="fas fa-map-marker-alt"></i> {{location}}
+                    Location <i class="fas fa-map-marker-alt"></i> Wolverhampton WV4
                   </div>
                   <div class="food-post-date">
                     <i class="far fa-clock"></i>11/01/2022
                   </div>
-                  <div class="food-type">{{food_type}}</div>
+                  <div class="food-type">Meal</div>
                 </div>
 
                 <div class="card-stats">
@@ -265,7 +254,7 @@
                   </div>
                 </div>
 
-                <div class="food-price">$56.99</div>
+                <div class="food-price">$9.00</div>
               </div>
             </div>
 
@@ -275,7 +264,7 @@
               <div class="card">
                 <div
                   style="
-            background: url({{food_url}});
+            background: url(https://upload.wikimedia.org/wikipedia/commons/a/a5/Glass_of_Milk_%2833657535532%29.jpg);
             grid-area: image;
             border-top-left-radius: 15px;
             border-top-right-radius: 15px;
@@ -286,22 +275,22 @@
                 ></div>
                 <div class="card-text">
                   <h2 class="mb-0">
-                    {{food_name}}
+                    Glass of Milk
                     <i class="fas fa-check-circle"></i>
                     <i class="fas fa-times"></i>
                   </h2>
 
                   <a href="" class="username"
-                    ><i class="fas fa-user"></i> {{User.username}}</a
+                    ><i class="fas fa-user"></i> dahir</a
                   >
 
                   <div class="location-point">
-                    Location <i class="fas fa-map-marker-alt"></i> {{location}}
+                    Location <i class="fas fa-map-marker-alt"></i> Walsall WS2
                   </div>
                   <div class="food-post-date">
                     <i class="far fa-clock"></i>11/01/2022
                   </div>
-                  <div class="food-type">{{food_type}}</div>
+                  <div class="food-type">Grocery</div>
                 </div>
 
                 <div class="card-stats">
@@ -320,7 +309,7 @@
                   </div>
                 </div>
 
-                <div class="food-price">$56.99</div>
+                <div class="food-price">$2.00</div>
               </div>
             </div>
 
@@ -329,7 +318,7 @@
               <div class="card">
                 <div
                   style="
-            background: url({{food_url}});
+            background: url(https://images-gmi-pmc.edge-generalmills.com/7c1096c7-bfd0-4806-a794-1d3001fe0063.jpg);
             grid-area: image;
             border-top-left-radius: 15px;
             border-top-right-radius: 15px;
@@ -340,22 +329,22 @@
                 ></div>
                 <div class="card-text">
                   <h2 class="mb-0">
-                    {{food_name}}
+                    Fudge Ice-Cream
                     <i class="fas fa-check-circle"></i>
                     <i class="fas fa-times"></i>
                   </h2>
 
                   <a href="" class="username"
-                    ><i class="fas fa-user"></i> {{User.username}}</a
+                    ><i class="fas fa-user"></i> andrada</a
                   >
 
                   <div class="location-point">
-                    Location <i class="fas fa-map-marker-alt"></i> {{location}}
+                    Location <i class="fas fa-map-marker-alt"></i> Birmingham Airport
                   </div>
                   <div class="food-post-date">
                     <i class="far fa-clock"></i>11/01/2022
                   </div>
-                  <div class="food-type">{{food_type}}</div>
+                  <div class="food-type">Dessert</div>
                 </div>
 
                 <div class="card-stats">
@@ -374,7 +363,7 @@
                   </div>
                 </div>
 
-                <div class="food-price">$56.99</div>
+                <div class="food-price">$4.00</div>
               </div>
             </div>
           </div>
@@ -388,8 +377,8 @@
             ></a
           >
         </li>
-        <li id="carousel__slide3" tabindex="0" class="carousel__slide">
-          <!--Card 3-->
+        {{!-- <li id="carousel__slide3" tabindex="0" class="carousel__slide"> --}}
+          {{!-- <!--Card 3-->
           <div class="cards-container">
             <div
               class="rounded shadow-sm d-flex flex-wrap flex-row justify-content-center"
@@ -758,6 +747,61 @@
             <a href="#carousel__slide4" class="carousel__navigation-button"></a>
           </li>
         </ol>
-      </aside>
+      </aside> --}}
     </section>
     <!--Carousel end-->
+
+    <!-- Content section-->
+    <section class="py-5">
+      <div class="container my-5">
+        <div class="row justify-content-center">
+          <div class="col-lg-6">
+            <h2>All the choices you need</h2>
+            <p class="lead">
+              Selling surplus food just got easy! Help save the planet and
+              create an account today!
+            </p>
+            <p class="mb-0">
+              Join thousands of local businesses and individuals who fight food
+              waste. Saving three meals from being wasted saves 2.5kg of CO2e -
+              the same as would be produced by charging 320 smartphones.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Image element - set the background image for the header in the line below-->
+    <div
+      class="py-5 bg-image-full"
+      style="
+        background-image: url('https://source.unsplash.com/4ulffa6qoKA/1200x800');
+      "
+    >
+      <!-- Put anything you want here! The spacer below with inline CSS is just for demo purposes!-->
+      <div style="height: 20rem"></div>
+    </div>
+    <!-- Content section-->
+    <section class="py-5">
+      <div class="container my-5">
+        <div class="row justify-content-center">
+          <div class="col-lg-6">
+            <h2>Day Or Night</h2>
+            <p class="lead">Day or night, someone may still be online!</p>
+            <p class="mb-0">
+              The app is meant to be used 24/24 7/7 therefore if you had had a
+              along day and you didn't have the chance to post that delicious
+              pastry, there is still time! Someone may still be online ready to
+              grab them - whether they are pulling a all nighter for that
+              project at the end of year 2, or a newly mom who is finally having
+              a few hours for herself!
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Footer-->
+    <footer class="py-5">
+      <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; Food4U 2022</p>
+      </div>
+    </footer>
