@@ -1,6 +1,12 @@
-const renderHomePage = (req, res) => {
+const { Post } = require("../../models");
+
+const renderHomePage = async (req, res) => {
   const { loggedIn } = req.session;
-  res.render("home", { loggedIn });
+
+  const dbData = await Post.findAll();
+  const data = dbData.map((each) => each.get({ plain: true }));
+  console.log(data);
+  res.render("home", { loggedIn, data });
 };
 const renderLoginPage = (req, res) => {
   res.render("login");
