@@ -103,7 +103,7 @@ The application is using its own server-side API.
 
 The URL of the Heroku Application is available [here](https://food-4u.herokuapp.com/login)
 
-The URL of the GitHub repository is available [here](https://andradag.github.io/food4U/).
+The URL of the GitHub repository is available [here](https://github.com/andradag/food4U/tree/main).
 
 ## Plans For Improvement
 
